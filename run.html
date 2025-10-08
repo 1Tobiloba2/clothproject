@@ -25,86 +25,330 @@
     </style>
   </head>
   <body>
-    <!-- Existing Header (for context, not part of the requested change) -->
-    <header class="bg-white shadow-sm py-4">
+    <section class="bg-white py-12">
       <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center">
-          <div class="flex items-center space-x-10">
-            <h1 class="text-2xl font-bold">
-              SHOP<span class="text-gray-400">.CO</span>
-            </h1>
-            <nav class="hidden md:flex space-x-6">
-              <a href="#" class="font-medium">Shop</a>
-              <a href="#" class="font-medium">On Sale</a>
-              <a href="#" class="font-medium">New Arrivals</a>
-              <a href="#" class="font-medium">Brands</a>
-            </nav>
-          </div>
-
-          <div class="flex items-center space-x-4">
-            <div class="relative hidden md:block">
-              <input
-                type="text"
-                placeholder="Search for products..."
-                class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-64"
-              />
-              <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-            </div>
-            <div class="flex space-x-4">
-              <button class="p-2 rounded-full hover:bg-gray-100">
-                <i class="fas fa-shopping-cart text-gray-600"></i>
-              </button>
-              <button class="p-2 rounded-full hover:bg-gray-100">
-                <i class="far fa-user text-gray-600"></i>
-              </button>
-            </div>
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-4xl font-extrabold text-gray-900">
+            OUR HAPPY CUSTOMERS
+          </h2>
+          <div class="flex space-x-4">
+            <button class="text-gray-900 hover:text-gray-700">
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                ></path>
+              </svg>
+            </button>
+            <button class="text-gray-900 hover:text-gray-700">
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
-      </div>
-    </header>
 
-    <!-- Brands Section - Now with horizontal scrolling -->
-    <section class="bg-black py-5 w-full">
-      <div class="max-w-screen-xl mx-auto px-4">
-        <div
-          class="brand-slider-container flex space-x-16 items-center text-white text-lg md:text-xl lg:text-2xl font-semibold tracking-wide"
-        >
-          <!-- Using inline-block or a flex item with shrink-0 ensures elements don't wrap -->
-          <span class="font-light flex-shrink-0">VERSACE</span>
-          <span class="font-bold flex-shrink-0">ZARA</span>
-          <span class="font-bold flex-shrink-0">GUCCI</span>
-          <span class="font-bold flex-shrink-0">PRADA</span>
-          <span class="font-light flex-shrink-0">Calvin Klein</span>
-          <span class="font-light flex-shrink-0">BALENCIAGA</span>
-          <span class="font-bold flex-shrink-0">H&M</span>
-          <span class="font-bold flex-shrink-0">UNIQLO</span>
+        <div class="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide">
+          <!-- Review Card 1 -->
+          <div class="flex-none w-80 bg-gray-50 p-6 rounded-lg shadow-sm">
+            <div class="flex mb-4">
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+            </div>
+            <div class="flex items-center mb-4">
+              <h3 class="text-lg font-semibold text-gray-900 mr-2">Sarah M.</h3>
+              <svg
+                class="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-gray-600 text-sm">
+              "I'm blown away by the quality and style of the clothes I received
+              from Shop.co. From casual wear to elegant dresses, every piece
+              I've bought has exceeded my expectations."
+            </p>
+          </div>
+
+          <!-- Review Card 2 -->
+          <div class="flex-none w-80 bg-gray-50 p-6 rounded-lg shadow-sm">
+            <div class="flex mb-4">
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+            </div>
+            <div class="flex items-center mb-4">
+              <h3 class="text-lg font-semibold text-gray-900 mr-2">Alex K.</h3>
+              <svg
+                class="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-gray-600 text-sm">
+              "Finding clothes that align with my personal style used to be a
+              challenge until I discovered Shop.co. The range of options they
+              offer is truly remarkable, catering to a variety of tastes and
+              occasions."
+            </p>
+          </div>
+
+          <!-- Review Card 3 -->
+          <div class="flex-none w-80 bg-gray-50 p-6 rounded-lg shadow-sm">
+            <div class="flex mb-4">
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+            </div>
+            <div class="flex items-center mb-4">
+              <h3 class="text-lg font-semibold text-gray-900 mr-2">James L.</h3>
+              <svg
+                class="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-gray-600 text-sm">
+              "As someone who's always on the lookout for unique fashion pieces,
+              I'm thrilled to have stumbled upon Shop.co. The selection of
+              clothes is not only diverse but also on-point with the latest
+              trends."
+            </p>
+          </div>
+
+          <!-- Review Card 4 (partially visible, similar structure) -->
+          <div class="flex-none w-80 bg-gray-50 p-6 rounded-lg shadow-sm">
+            <div class="flex mb-4">
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+              <svg
+                class="w-5 h-5 text-yellow-400 fill-current"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279l-7.416-3.901-7.416 3.901 1.48-8.279-6.064-5.828 8.332-1.151z"
+                />
+              </svg>
+            </div>
+            <div class="flex items-center mb-4">
+              <h3 class="text-lg font-semibold text-gray-900 mr-2">Emily R.</h3>
+              <svg
+                class="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-gray-600 text-sm">
+              "I love the variety and quality of items I find here. It's my
+              go-to for stylish and comfortable clothing that lasts. Highly
+              recommend!"
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Placeholder for other content -->
-    <div class="container mx-auto px-4 py-12">
-      <h2 class="text-3xl font-bold text-center mb-6">
-        Explore Our Collections
-      </h2>
-      <p class="text-center text-gray-600 max-w-2xl mx-auto">
-        Discover the latest trends and timeless classics from your favorite
-        brands. Scroll the brand section above to see more!
-      </p>
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="font-bold text-xl mb-2">New Arrivals</h3>
-          <p class="text-gray-700">Be the first to wear our freshest styles.</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="font-bold text-xl mb-2">On Sale</h3>
-          <p class="text-gray-700">Grab amazing deals before they're gone.</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="font-bold text-xl mb-2">Editor's Picks</h3>
-          <p class="text-gray-700">Handpicked selections just for you.</p>
-        </div>
-      </div>
-    </div>
+    <style>
+      /* Custom scrollbar hide utility for demonstration */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+      }
+    </style>
   </body>
 </html>
