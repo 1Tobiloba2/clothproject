@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>SHOP.CO - Find Clothes That Match Your Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800">
+    <header class="bg-white shadow-sm py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-10">
+            <h1 class="text-2xl font-bold">
+              SHOP<span class="text-gray-400">.CO</span>
+            </h1>
+            <nav class="hidden md:flex space-x-6">
+              <a href="#" class="font-medium">Shop</a>
+              <a href="#" class="font-medium">On Sale</a>
+              <a href="#" class="font-medium">New Arrivals</a>
+              <a href="#" class="font-medium">Brands</a>
+            </nav>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <div class="relative hidden md:block">
+              <input
+                type="text"
+                placeholder="Search for products..."
+                class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-64"
+              />
+              <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            </div>
+            <div class="flex space-x-4">
+              <button class="p-2 rounded-full hover:bg-gray-100">
+                <i class="fas fa-shopping-cart text-gray-600"></i>
+              </button>
+              <button class="p-2 rounded-full hover:bg-gray-100">
+                <i class="far fa-user text-gray-600"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto p-6">
+      <!-- Breadcrumb -->
+      <div class="text-sm text-gray-500 mb-4">
+        Home / Shop / Men / <span class="text-black">T-shirts</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Left: Images -->
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- Thumbnail List -->
+          <div class="flex md:flex-col gap-4">
+            <img
+              src="images/image 1.png"
+              class="w-16 h-16 object-cover rounded border"
+              onclick="loadImage(this)"
+              alt=""
+            />
+            <img
+              src="images/image 5.png"
+              class="w-16 h-16 object-cover rounded border"
+              onclick="loadImage(this)"
+              alt=""
+            />
+            <img
+              src="images/image 6.png"
+              class="w-16 h-16 object-cover"
+              onclick="loadImage(this)"
+              alt=""
+            />
+          </div>
+
+          <!-- Main Image -->
+          <div class="flex-1" id="image-board">
+            <img
+              id="main-image"
+              src="images/image 1.png"
+              class="w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        <!-- Right: Product Info -->
+        <div>
+          <h1 class="text-3xl font-black mb-2">ONE LIFE GRAPHIC T-SHIRT</h1>
+          <!-- Rating -->
+          <div class="flex items-center space-x-1 text-yellow-400 mb-2">
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="text-gray-600 text-sm ml-2">4.5/5</span>
+          </div>
+
+          <!-- Price -->
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="text-2xl font-bold text-black">$260</span>
+            <span class="line-through text-gray-400 text-lg">$300</span>
+            <span class="text-red-500 text-sm font-semibold">-40%</span>
+          </div>
+
+          <!-- Description -->
+          <p class="text-gray-600 mb-6">
+            This graphic t-shirt which is perfect for any occasion. Crafted from
+            a soft and breathable fabric, it offers superior comfort and style.
+          </p>
+
+          <!-- Color Selector -->
+          <div class="mb-4">
+            <p class="text-sm font-semibold mb-1">Select Colors</p>
+            <div class="flex gap-3">
+              <span
+                class="w-6 h-6 bg-green-900 rounded-full border-2 border-black cursor-pointer"
+              ></span>
+              <span
+                class="w-6 h-6 bg-gray-500 rounded-full border cursor-pointer"
+              ></span>
+              <span
+                class="w-6 h-6 bg-indigo-900 rounded-full border cursor-pointer"
+              ></span>
+            </div>
+          </div>
+
+          <!-- Size Selector -->
+          <div class="mb-6">
+            <p class="text-sm font-semibold mb-1">Choose Size</p>
+            <div class="flex gap-3">
+              <button class="px-4 py-2 border rounded-lg text-gray-500">
+                Small
+              </button>
+              <button class="px-4 py-2 border rounded-lg text-gray-500">
+                Medium
+              </button>
+              <button class="px-4 py-2 border rounded-lg text-gray-500">
+                Large
+              </button>
+              <button class="px-4 py-2 border rounded-lg text-gray-500">
+                X-Large
+              </button>
+            </div>
+          </div>
+
+          <!-- Quantity & Add to Cart -->
+          <div class="flex items-center gap-4">
+            <div class="flex items-center border rounded overflow-hidden">
+              <button class="px-3 py-2 text-lg" id="decreaseBtn">−</button>
+              <label class="px-4 py-2" id="countLabel">1</label>
+              <button class="px-3 py-2 text-lg" id="increaseBtn">+</button>
+            </div>
+            <button
+              class="px-6 py-3 bg-black text-white font-semibold rounded hover:opacity-90"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">
+          YOU MIGHT ALSO LIKE
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/2Frame 32.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Polo With Contrast Trims</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-black px-1"> $212 </span>
+
+              <span class="text-lg text-gray-400 line-through font-bold">
+                $242
+              </span>
+
+              <span
+                class="bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap"
+              >
+                -20%
+              </span>
+            </div>
+          </div>
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/2Frame 33.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Gradient Graphic T-shirt</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-black px-1"> $240 </span>
+
+              <!-- <span class="text-lg text-gray-400 line-through font-bold">
+                $260
+              </span>
+
+              <span
+                class="bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap"
+              >
+                -20%
+              </span> -->
+            </div>
+          </div>
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/2Frame 34 (2).png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Polo With Tripping Details</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <p class="font-bold text-lg">$180</p>
+          </div>
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/2Frame 38.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Black Striped T-shirt</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-black px-1"> $120 </span>
+
+              <span class="text-lg text-gray-400 line-through font-bold">
+                $150
+              </span>
+              <span
+                class="bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap"
+              >
+                -30%
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="text-center">
+          <button
+            class="border border-gray-400 px-14 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition"
+          >
+            View All
+          </button>
+        </div>
+      </div> -->
+    </section>
+
+     <section
+      class="py-8 bg-black text-white rounded-2xl mx-auto max-w-7xl px-6 shadow-xl"
+    >
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight uppercase"
+          >
+            STAY UP TO DATE ABOUT OUR LATEST OFFERS
+          </h2>
+        </div>
+
+        <div
+          class="md:w-1/2 flex flex-col items-center md:items-end space-y-4 w-full max-w-md"
+        >
+          <div class="relative w-full">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="w-full pl-12 pr-4 py-3 rounded-full bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <i
+              class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+            ></i>
+          </div>
+          <button
+            class="w-full bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300"
+          >
+            Subscribe to Newsletter
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-50 text-gray-800 pt-12">
+      <div class="container mx-auto px-4">
+        <div
+          class="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-4 lg:gap-12 pb-10"
+        >
+          <div class="col-span-2 md:col-span-1">
+            <h3 class="text-2xl font-bold mb-4">SHOP.CO</h3>
+            <p class="text-gray-500 text-sm mb-6 max-w-xs">
+              We have clothes that suits your style and which you're proud to
+              wear. From women to men.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="text-xl text-gray-700 hover:text-black transition"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-xl text-gray-700 hover:text-black transition"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-xl text-gray-700 hover:text-black transition"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-xl text-gray-700 hover:text-black transition"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-span-1">
+            <h4 class="font-bold text-lg mb-4">COMPANY</h4>
+            <ul class="space-y-3 text-gray-500 text-sm">
+              <li><a href="#" class="hover:text-black transition">About</a></li>
+              <li>
+                <a href="#" class="hover:text-black transition">Features</a>
+              </li>
+              <li><a href="#" class="hover:text-black transition">Works</a></li>
+              <li>
+                <a href="#" class="hover:text-black transition">Career</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-1">
+            <h4 class="font-bold text-lg mb-4">HELP</h4>
+            <ul class="space-y-3 text-gray-500 text-sm">
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Customer Support</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Delivery Details</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-1">
+            <h4 class="font-bold text-lg mb-4">FAQ</h4>
+            <ul class="space-y-3 text-gray-500 text-sm">
+              <li>
+                <a href="#" class="hover:text-black transition">Account</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Manage Deliveries</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition">Orders</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition">Payments</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-1">
+            <h4 class="font-bold text-lg mb-4">RESOURCES</h4>
+            <ul class="space-y-3 text-gray-500 text-sm">
+              <li>
+                <a href="#" class="hover:text-black transition">Free eBooks</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Development Tutorial</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >How to - Blog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Youtube Playlist</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="border-gray-300" />
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center py-2 text-sm"
+        >
+          <p class="text-gray-500 mb-4 md:mb-0">
+            Shop.co © 2000-2023, All Rights Reserved
+          </p>
+
+          <div class="flex space-x-2">
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=VISA"
+                alt="Visa"
+                class="w-10"
+            /></span>
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=MasterCard"
+                alt="MasterCard"
+                class="w-10"
+            /></span>
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=PayPal"
+                alt="PayPal"
+                class="w-10"
+            /></span>
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=GPay"
+                alt="Google Pay"
+                class="w-10"
+            /></span>
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=APay"
+                alt="Apple Pay"
+                class="w-10"
+            /></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function loadImage(imgElement) {
+        const mainImage = document.getElementById("main-image");
+        mainImage.src = imgElement.src;
+      }
+    </script>
+
+    <script>
+      const decreaseBtn = document.getElementById("decreaseBtn");
+      // const resetBtn = document.getElementById("resetBtn");
+      const increaseBtn = document.getElementById("increaseBtn");
+      const countLabel = document.getElementById("countLabel");
+      let count = 0;
+
+      increaseBtn.onclick = function () {
+        count++;
+        countLabel.textContent = count;
+      };
+      decreaseBtn.onclick = function () {
+        count--;
+        countLabel.textContent = count;
+      };
+      resetBtn.onclick = function () {
+        count = 0;
+        countLabel.textContent = count;
+      };
+    </script>
+  </body>
+</html>

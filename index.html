@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>SHOP.CO - Find Clothes That Match Your Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .brand-slider {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider-wrapper {
+        overflow-x: hidden;
+      }
+
+      .slider-track {
+        display: flex;
+        gap: 4rem; /* Similar to space-x-16 */
+        animation: slide-left 20s linear infinite;
+      }
+
+      .slider-track span {
+        flex: 0 0 auto;
+      }
+
+      /* Animation Keyframes */
+      @keyframes slide-left {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Responsive font size (if Tailwind not applied) */
+      @media (max-width: 768px) {
+        .slider-track {
+          font-size: 1rem;
+          gap: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800">
+    <header class="bg-white shadow-sm py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-10">
+            <h1 class="text-2xl font-bold">
+              SHOP<span class="text-gray-400">.CO</span>
+            </h1>
+            <nav class="hidden md:flex space-x-6">
+              <a href="#" class="font-medium">Shop</a>
+              <a href="#" class="font-medium">On Sale</a>
+              <a href="#" class="font-medium">New Arrivals</a>
+              <a href="#" class="font-medium">Brands</a>
+            </nav>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <div class="relative hidden md:block">
+              <input
+                type="text"
+                placeholder="Search for products..."
+                class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-64"
+              />
+              <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            </div>
+            <div class="flex space-x-4">
+              <button class="p-2 rounded-full hover:bg-gray-100">
+                <i class="fas fa-shopping-cart text-gray-600"></i>
+              </button>
+              <button class="p-2 rounded-full hover:bg-gray-100">
+                <i class="far fa-user text-gray-600"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-gray-100 py-5">
+      <div class="container mx-auto px-3">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1
+              class="text-5xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-wide"
+            >
+              FIND CLOTHES THAT MATCHES YOUR STYLE
+            </h1>
+            <p class="text-gray-600 mb-8 max-w-lg">
+              Browse through our diverse range of meticulously crafted garments,
+              designed to bring out your individuality and cater to your sense
+              of style.
+            </p>
+            <button
+              class="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition duration-300"
+            >
+              Shop Now
+            </button>
+            <div class="flex mt-12 space-x-10">
+              <div>
+                <h3 class="text-2xl font-bold">200+</h3>
+                <p class="text-gray-600">International Brands</p>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold">2,000+</h3>
+                <p class="text-gray-600">High-Quality Products</p>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold">20,000+</h3>
+                <p class="text-gray-600">Happy Customers</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 flex justify-center">
+            <div class="relative w-full max-w-[500px] h-[600px] md:h-[700px]">
+              <img
+                src="images/Adobe Express - file.png"
+                alt="Fashionable clothes matching your style"
+                class="w-full h-full rounded-2xl shadow-lg object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-slider bg-black py-5 w-full overflow-hidden">
+      <div class="slider-wrapper max-w-screen-xl mx-auto px-4">
+        <div
+          class="slider-track text-white text-lg md:text-xl lg:text-2xl font-semibold tracking-wide whitespace-nowrap"
+        >
+          <span class="font-light">VERSACE</span>
+          <span class="font-bold">ZARA</span>
+          <span class="font-bold">GUCCI</span>
+          <span class="font-bold">PRADA</span>
+          <span class="font-light">Calvin Klein</span>
+          <span class="font-light">BALENCIAGA</span>
+          <span class="font-bold">H&M</span>
+          <span class="font-bold">UNIQLO</span>
+
+          <!-- Duplicate for infinite loop -->
+          <span class="font-light">VERSACE</span>
+          <span class="font-bold">ZARA</span>
+          <span class="font-bold">GUCCI</span>
+          <span class="font-bold">PRADA</span>
+          <span class="font-light">Calvin Klein</span>
+          <span class="font-light">BALENCIAGA</span>
+          <span class="font-bold">H&M</span>
+          <span class="font-bold">UNIQLO</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">
+          NEW ARRIVALS
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+          <a href="product.html">
+            <div class="p-4 text-left">
+              <div class="h-64 flex items-center justify-center mb-4">
+                <img
+                  src="images/image 7.png"
+                  alt="T-shirt"
+                  class="h-full object-contain"
+                />
+              </div>
+              <h3 class="font-bold text-l mb-1">T-shirt with Tape Details</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+              </div>
+              <p class="font-bold text-lg">$120</p>
+            </div>
+          </a>
+
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/image 8.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Skinny Fit Jeans</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-black px-1"> $240 </span>
+
+              <span class="text-lg text-gray-400 line-through font-bold">
+                $260
+              </span>
+
+              <span
+                class="bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap"
+              >
+                -20%
+              </span>
+            </div>
+          </div>
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/image 9.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Checkered Shirt</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <p class="font-bold text-lg">$180</p>
+          </div>
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/image 10.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Sleeve Striped T-shirt</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-black px-1"> $130 </span>
+
+              <span class="text-lg text-gray-400 line-through font-bold">
+                $160
+              </span>
+              <span
+                class="bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap"
+              >
+                -30%
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button
+            class="border border-gray-400 px-14 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition"
+          >
+            View All
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">
+          TOP SELLING
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/Frame 32.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Vertical Striped Shirt</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-black px-1"> $212 </span>
+
+              <span class="text-lg text-gray-400 line-through font-bold">
+                $232
+              </span>
+              <span
+                class="bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap"
+              >
+                -20%
+              </span>
+            </div>
+          </div>
+
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/Frame 33.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Courage Graphic T-Shirt</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-black px-1"> $145 </span>
+            </div>
+          </div>
+
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/Frame 34 (2).png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Loose Fit Bermuda Shorts</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <p class="font-bold text-lg">$80</p>
+          </div>
+
+          <div class="p-4 text-left">
+            <div class="h-64 flex items-center justify-center mb-4">
+              <img
+                src="images/Frame 38.png"
+                alt="T-shirt"
+                class="h-full object-contain"
+              />
+            </div>
+            <h3 class="font-bold text-l mb-1">Faded Skinny Jeans</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-2">4.5/5</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-black px-1"> $210 </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button
+            class="border border-gray-400 px-14 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition"
+          >
+            View All
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div
+          class="p-6 bg-white border border-gray-200 rounded-xl shadow-lg w-full"
+        >
+          <h2
+            class="text-4xl font-extrabold text-gray-900 text-center mb-8 uppercase tracking-wider"
+          >
+            Browse by Dress Style
+          </h2>
+
+          <div class="grid grid-cols-4 md:grid-cols-12 gap-4 md:gap-6">
+            <a href="#" class="block col-span-2 md:col-span-5">
+              <div
+                class="w-full h-40 md:h-64 rounded-xl overflow-hidden shadow-md relative group"
+              >
+                <img
+                  src="images/image 11.png"
+                  alt="Casual Style"
+                  class="w-full h-full object-cover transition duration-300"
+                />
+                <div class="absolute inset-0">
+                  <span
+                    class="absolute top-4 left-4 text-black text-xl md:text-2xl font-bold uppercase tracking-widest"
+                  >
+                    Casual
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="block col-span-2 md:col-span-7">
+              <div
+                class="w-full h-40 md:h-64 rounded-xl overflow-hidden shadow-md relative group"
+              >
+                <img
+                  src="images/image 13.png"
+                  alt="Party Style"
+                  class="w-full h-full object-cover transition duration-300"
+                />
+                <div class="absolute inset-0">
+                  <span
+                    class="absolute top-4 left-4 text-black text-xl md:text-2xl font-bold uppercase tracking-widest"
+                  >
+                    Formal
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="block col-span-2 md:col-span-7">
+              <div
+                class="w-full h-40 md:h-64 rounded-xl overflow-hidden shadow-md relative group"
+              >
+                <img
+                  src="images/image 12.png"
+                  alt="Party Style"
+                  class="w-full h-full object-cover transition duration-300"
+                />
+                <div class="absolute inset-0">
+                  <span
+                    class="absolute top-4 left-4 text-black text-xl md:text-2xl font-bold uppercase tracking-widest"
+                  >
+                    Party
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="block col-span-2 md:col-span-5">
+              <div
+                class="w-full h-40 md:h-64 rounded-xl overflow-hidden shadow-md relative group"
+              >
+                <img
+                  src="images/image 14.png"
+                  alt="Gym Style"
+                  class="w-full h-full object-cover transition duration-300"
+                />
+                <div class="absolute inset-0">
+                  <span
+                    class="absolute top-4 left-4 text-black text-xl md:text-2xl font-bold uppercase tracking-widest"
+                  >
+                    Gym
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-8 bg-black text-white rounded-2xl mx-auto max-w-7xl px-6 shadow-xl"
+    >
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight uppercase"
+          >
+            STAY UP TO DATE ABOUT OUR LATEST OFFERS
+          </h2>
+        </div>
+
+        <div
+          class="md:w-1/2 flex flex-col items-center md:items-end space-y-4 w-full max-w-md"
+        >
+          <div class="relative w-full">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="w-full pl-12 pr-4 py-3 rounded-full bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <i
+              class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+            ></i>
+          </div>
+          <button
+            class="w-full bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300"
+          >
+            Subscribe to Newsletter
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-50 text-gray-800 pt-12">
+      <div class="container mx-auto px-4">
+        <div
+          class="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-4 lg:gap-12 pb-10"
+        >
+          <div class="col-span-2 md:col-span-1">
+            <h3 class="text-2xl font-bold mb-4">SHOP.CO</h3>
+            <p class="text-gray-500 text-sm mb-6 max-w-xs">
+              We have clothes that suits your style and which you're proud to
+              wear. From women to men.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="text-xl text-gray-700 hover:text-black transition"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-xl text-gray-700 hover:text-black transition"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-xl text-gray-700 hover:text-black transition"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-xl text-gray-700 hover:text-black transition"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-span-1">
+            <h4 class="font-bold text-lg mb-4">COMPANY</h4>
+            <ul class="space-y-3 text-gray-500 text-sm">
+              <li><a href="#" class="hover:text-black transition">About</a></li>
+              <li>
+                <a href="#" class="hover:text-black transition">Features</a>
+              </li>
+              <li><a href="#" class="hover:text-black transition">Works</a></li>
+              <li>
+                <a href="#" class="hover:text-black transition">Career</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-1">
+            <h4 class="font-bold text-lg mb-4">HELP</h4>
+            <ul class="space-y-3 text-gray-500 text-sm">
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Customer Support</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Delivery Details</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-1">
+            <h4 class="font-bold text-lg mb-4">FAQ</h4>
+            <ul class="space-y-3 text-gray-500 text-sm">
+              <li>
+                <a href="#" class="hover:text-black transition">Account</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Manage Deliveries</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition">Orders</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition">Payments</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-1">
+            <h4 class="font-bold text-lg mb-4">RESOURCES</h4>
+            <ul class="space-y-3 text-gray-500 text-sm">
+              <li>
+                <a href="#" class="hover:text-black transition">Free eBooks</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Development Tutorial</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >How to - Blog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-black transition"
+                  >Youtube Playlist</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="border-gray-300" />
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center py-2 text-sm"
+        >
+          <p class="text-gray-500 mb-4 md:mb-0">
+            Shop.co © 2000-2023, All Rights Reserved
+          </p>
+
+          <div class="flex space-x-2">
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=VISA"
+                alt="Visa"
+                class="w-10"
+            /></span>
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=MasterCard"
+                alt="MasterCard"
+                class="w-10"
+            /></span>
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=PayPal"
+                alt="PayPal"
+                class="w-10"
+            /></span>
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=GPay"
+                alt="Google Pay"
+                class="w-10"
+            /></span>
+            <span class="bg-white p-1 rounded border border-gray-200"
+              ><img
+                src="https://via.placeholder.com/40x25?text=APay"
+                alt="Apple Pay"
+                class="w-10"
+            /></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
