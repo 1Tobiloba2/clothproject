@@ -63,47 +63,54 @@
     </header>
 
     <div class="max-w-7xl mx-auto p-6">
-      <!-- Breadcrumb -->
+    
       <div class="text-sm text-gray-500 mb-4">
         Home / Shop / Men / <span class="text-black">T-shirts</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <!-- Left: Images -->
-        <div class="flex flex-col md:flex-row gap-4">
-          <!-- Thumbnail List -->
-          <div class="flex md:flex-col gap-4">
+        
+         <div class="flex flex-col md:flex-row gap-4">
+       
+        <div class="flex flex-row md:flex-col gap-4 order-2 md:order-none">
             <img
-              src="images/image 1.png"
-              class="w-16 h-16 object-cover rounded border"
-              onclick="loadImage(this)"
-              alt=""
+                src="images/image 1.png"
+                class="w-16 h-16 object-cover rounded border"
+                onclick="loadImage(this)"
+                alt=""
             />
             <img
-              src="images/image 5.png"
-              class="w-16 h-16 object-cover rounded border"
-              onclick="loadImage(this)"
-              alt=""
+                src="images/image 5.png"
+                class="w-16 h-16 object-cover rounded border"
+                onclick="loadImage(this)"
+                alt=""
             />
             <img
-              src="images/image 6.png"
-              class="w-16 h-16 object-cover"
-              onclick="loadImage(this)"
-              alt=""
+                src="images/image 6.png"
+                class="w-16 h-16 object-cover"
+                onclick="loadImage(this)"
+                alt=""
             />
-          </div>
-
-          <!-- Main Image -->
-          <div class="flex-1" id="image-board">
-            <img
-              id="main-image"
-              src="images/image 1.png"
-              class="w-full rounded-lg border"
-            />
-          </div>
         </div>
 
-        <!-- Right: Product Info -->
+        <!-- Main Image -->
+        <!--
+            Changed:
+            - Added `order-1` (for mobile) to place it before the thumbnails.
+            - Added `md:order-none` to revert to default order on desktop.
+        -->
+        <div class="flex-1 order-1 md:order-none" id="image-board">
+            <img
+                id="main-image"
+                src="images/image 1.png"
+                class="w-full rounded-lg border"
+                alt=""
+            />
+        </div>
+    
+        </div>
+
+       
         <div>
           <h1 class="text-3xl font-black mb-2">ONE LIFE GRAPHIC T-SHIRT</h1>
           <!-- Rating -->
@@ -182,7 +189,228 @@
         </div>
       </div>
     </div>
+    
+       <nav
+      class="flex justify-center border-b border-gray-200 text-sm font-medium"
+      id="product-nav"
+    >
+      <button
+        class="px-6 py-3 text-gray-600 hover:text-black"
+        data-section="details"
+      >
+        Product Details
+      </button>
+      <button
+        class="px-6 py-3 border-b-2 border-black text-black"
+        data-section="reviews"
+      >
+        Rating & Reviews
+      </button>
+      <button
+        class="px-6 py-3 text-gray-600 hover:text-black"
+        data-section="faqs"
+      >
+        FAQs
+      </button>
+    </nav>
 
+    <!-- Product Details Section -->
+    <section class="max-w-6xl mx-auto px-4 py-10 hidden" id="section-details">
+      <h2 class="text-xl font-semibold mb-4">Product Details</h2>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>100% Cotton, soft and breathable fabric</li>
+        <li>Unique graphic print designed by top artists</li>
+        <li>Machine washable, easy to care for</li>
+        <li>Available in multiple colors and sizes</li>
+        <li>Perfect for casual and semi-formal occasions</li>
+      </ul>
+    </section>
+
+    <!-- Reviews Header -->
+    <section class="max-w-6xl mx-auto px-4 py-10" id="section-reviews">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-semibold">
+          All Reviews <span class="text-gray-500 text-base">(451)</span>
+        </h2>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="flex items-center gap-2 px-4 py-2 border rounded-full text-gray-700 hover:bg-gray-100 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 9h10m-2 4h-6m-5 4h16"
+              />
+            </svg>
+            Latest
+          </button>
+          <button
+            class="bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition"
+          >
+            Write a Review
+          </button>
+        </div>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Review Card -->
+        <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 font-semibold">
+              <span>Alex M.</span>
+              <span class="text-green-500">●</span>
+            </div>
+            <div class="flex">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">
+            “The t-shirt exceeded my expectations! The colors are vibrant and
+            the print quality is top-notch. Being a UI/UX designer myself, I’m
+            quite picky about aesthetics, and this t-shirt definitely gets a
+            thumbs up from me.”
+          </p>
+          <p class="text-gray-500 text-sm">Posted on August 15, 2023</p>
+        </div>
+
+        <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 font-semibold">
+              <span>Alex M.</span>
+              <span class="text-green-500">●</span>
+            </div>
+            <div class="flex">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">
+            “The t-shirt exceeded my expectations! The colors are vibrant and
+            the print quality is top-notch. Being a UI/UX designer myself, I’m
+            quite picky about aesthetics, and this t-shirt definitely gets a
+            thumbs up from me.”
+          </p>
+          <p class="text-gray-500 text-sm">Posted on August 15, 2023</p>
+        </div>
+
+        <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 font-semibold">
+              <span>Ethan R.</span>
+              <span class="text-green-500">●</span>
+            </div>
+            <div class="flex">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">
+            “This t-shirt is a must-have for anyone who appreciates good design.
+            The minimalist yet stylish pattern caught my eye, and the fit is
+            perfect. I can see the designer’s touch in every aspect of this
+            shirt.”
+          </p>
+          <p class="text-gray-500 text-sm">Posted on August 16, 2023</p>
+        </div>
+
+        <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 font-semibold">
+              <span>Olivia P.</span>
+              <span class="text-green-500">●</span>
+            </div>
+            <div class="flex">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">
+            “As a UI/UX enthusiast, I value simplicity and functionality. This
+            t-shirt not only represents those principles but also feels great to
+            wear. It’s evident that the designer poured their creativity into
+            making this t-shirt stand out.”
+          </p>
+          <p class="text-gray-500 text-sm">Posted on August 17, 2023</p>
+        </div>
+
+        <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 font-semibold">
+              <span>Liam K.</span>
+              <span class="text-green-500">●</span>
+            </div>
+            <div class="flex">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">
+            “This t-shirt is a fusion of comfort and creativity. The fabric is
+            soft, and the design speaks volumes about the designer’s skill. It’s
+            like wearing a piece of art that reflects my passion for both design
+            and fashion.”
+          </p>
+          <p class="text-gray-500 text-sm">Posted on August 18, 2023</p>
+        </div>
+
+        <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 font-semibold">
+              <span>Ava H.</span>
+              <span class="text-green-500">●</span>
+            </div>
+            <div class="flex">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">
+            “I’m not just wearing a t-shirt; I’m wearing a piece of design
+            philosophy. The intricate details and thoughtful layout of the
+            design make this shirt a conversation starter.”
+          </p>
+          <p class="text-gray-500 text-sm">Posted on August 19, 2023</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <button
+          class="border border-gray-400 px-14 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition"
+        >
+          Load More Reviews
+        </button>
+      </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="max-w-6xl mx-auto px-4 py-10 hidden" id="section-faqs">
+      <h2 class="text-xl font-semibold mb-4">FAQs</h2>
+      <div class="space-y-3">
+        <details class="border rounded-lg p-4">
+          <summary class="font-medium cursor-pointer">
+            What is your return policy?
+          </summary>
+          <p class="text-gray-600 mt-2">
+            You can return items within 30 days of purchase for a full refund.
+          </p>
+        </details>
+        <details class="border rounded-lg p-4">
+          <summary class="font-medium cursor-pointer">
+            Do you offer international shipping?
+          </summary>
+          <p class="text-gray-600 mt-2">
+            Yes, international shipping is available with applicable charges.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    
     <section class="py-12">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">
@@ -551,5 +779,38 @@
         countLabel.textContent = count;
       };
     </script>
+
+
+<!-- JavaScript -->
+    <script>
+      const navButtons = document.querySelectorAll("#product-nav button");
+      const sections = document.querySelectorAll("section[id^='section-']");
+
+      navButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active styles from all buttons
+          navButtons.forEach((b) =>
+            b.classList.remove("border-b-2", "border-black", "text-black")
+          );
+          navButtons.forEach((b) => b.classList.add("text-gray-600"));
+
+          // Add active styles to clicked button
+          btn.classList.add("border-b-2", "border-black", "text-black");
+          btn.classList.remove("text-gray-600");
+
+          // Hide all sections
+          sections.forEach((sec) => sec.classList.add("hidden"));
+
+          // Show corresponding section
+          const target = btn.getAttribute("data-section");
+          document
+            .getElementById(`section-${target}`)
+            .classList.remove("hidden");
+        });
+      });
+    </script>
+
+   
+
   </body>
 </html>

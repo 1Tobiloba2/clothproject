@@ -17,7 +17,6 @@
         font-family: "Inter", sans-serif;
       }
 
-      /* Custom styles for the range slider */
       input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
@@ -46,7 +45,6 @@
         border-radius: 2px;
       }
 
-      /* Mobile filter sidebar */
       .filter-overlay {
         position: fixed;
         top: 0;
@@ -137,7 +135,6 @@
     <div
       class="grid grid-cols-1 lg:grid-cols-5 gap-6 px-4 pb-10 max-w-7xl mx-auto lg:px-6"
     >
-      <!-- Mobile Filter Button (Visible on small screens) -->
       <div
         class="lg:hidden flex justify-between items-center col-span-full mb-4"
       >
@@ -151,15 +148,12 @@
         </button>
       </div>
 
-      <!-- Filter Overlay (for mobile sidebar) -->
       <div id="filter-overlay" class="filter-overlay hidden opacity-0"></div>
 
-      <!-- SIDEBAR FILTERS -->
       <aside
         id="mobile-filters-sidebar"
         class="space-y-6 lg:col-span-1 filter-sidebar-mobile lg:relative lg:transform-none lg:bg-transparent lg:w-auto lg:z-auto lg:block no-scrollbar"
       >
-        <!-- Close button for mobile -->
         <div
           class="flex justify-between items-center pb-4 border-b border-gray-200 lg:hidden"
         >
@@ -169,14 +163,12 @@
           </button>
         </div>
 
-        <!-- Desktop Filter Title (Visible on large screens) -->
         <h2 class="text-lg font-bold hidden lg:block">Filters</h2>
 
         <!-- Categories -->
         <div>
           <div class="flex justify-between items-center mb-2 cursor-pointer">
             <h3 class="font-semibold text-base">Categories</h3>
-            <!-- Optional: Add an arrow icon for collapsing/expanding categories -->
           </div>
           <ul class="space-y-1 text-sm text-gray-700">
             <li class="cursor-pointer hover:text-black">T-Shirts</li>
@@ -294,7 +286,6 @@
 
       <!-- PRODUCT GRID -->
       <main class="lg:col-span-4">
-        <!-- Desktop sort and title (Visible on large screens) -->
         <div class="hidden lg:flex justify-between items-center mb-6">
           <h1 class="text-2xl font-bold">Casual</h1>
           <div class="text-sm text-gray-500">
@@ -310,7 +301,6 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <!-- Example Product -->
           <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
             <img
               src="https://images.unsplash.com/photo-1571003463777-160a28f80455?q=80"
@@ -324,7 +314,6 @@
             <div class="text-base font-bold mt-auto">$145</div>
           </div>
 
-          <!-- Add more product cards below as needed -->
           <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
             <img
               src="https://images.unsplash.com/photo-1607548549692-04e463a56658?q=80"

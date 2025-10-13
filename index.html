@@ -51,7 +51,6 @@
         }
       }
 
-      /* Responsive font size (if Tailwind not applied) */
       @media (max-width: 768px) {
         .slider-track {
           font-size: 1rem;
@@ -59,7 +58,6 @@
         }
       }
 
-      /* Custom scrollbar hide utility for demonstration */
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
@@ -447,8 +445,9 @@
             Browse by Dress Style
           </h2>
 
-          <div class="grid grid-cols-4 md:grid-cols-12 gap-4 md:gap-6">
-            <a href="#" class="block col-span-2 md:col-span-5">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-6">
+            <!-- Casual Style -->
+            <a href="#" class="block col-span-1 md:col-span-5">
               <div
                 class="w-full h-40 md:h-64 rounded-xl overflow-hidden shadow-md relative group"
               >
@@ -467,13 +466,14 @@
               </div>
             </a>
 
-            <a href="#" class="block col-span-2 md:col-span-7">
+            <!-- Formal Style -->
+            <a href="#" class="block col-span-1 md:col-span-7">
               <div
                 class="w-full h-40 md:h-64 rounded-xl overflow-hidden shadow-md relative group"
               >
                 <img
                   src="images/image 13.png"
-                  alt="Party Style"
+                  alt="Formal Style"
                   class="w-full h-full object-cover transition duration-300"
                 />
                 <div class="absolute inset-0">
@@ -486,7 +486,8 @@
               </div>
             </a>
 
-            <a href="#" class="block col-span-2 md:col-span-7">
+            <!-- Party Style -->
+            <a href="#" class="block col-span-1 md:col-span-7">
               <div
                 class="w-full h-40 md:h-64 rounded-xl overflow-hidden shadow-md relative group"
               >
@@ -505,7 +506,8 @@
               </div>
             </a>
 
-            <a href="#" class="block col-span-2 md:col-span-5">
+            <!-- Gym Style -->
+            <a href="#" class="block col-span-1 md:col-span-5">
               <div
                 class="w-full h-40 md:h-64 rounded-xl overflow-hidden shadow-md relative group"
               >
@@ -906,7 +908,7 @@
             </p>
           </div>
 
-          <!-- Review Card 4 (partially visible, similar structure) -->
+          <!-- Review Card 4  -->
           <div class="flex-none w-80 bg-gray-50 p-6 rounded-lg shadow-sm">
             <div class="flex mb-4">
               <svg
