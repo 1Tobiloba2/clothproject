@@ -215,12 +215,19 @@
           <div class="flex justify-between items-center mb-4 cursor-pointer">
             <h3 class="font-semibold text-base">Price</h3>
           </div>
-          <input type="range" min="50" max="500" value="200" class="w-full" />
+          <input
+            type="range"
+            min="20"
+            max="200"
+            value="200"
+            class="w-full"
+            id="price-range-slider"
+          />
           <div
             class="flex justify-between text-xs font-medium text-gray-600 mt-2"
           >
-            <span>$50</span>
-            <span>$200</span>
+            <span>$20</span>
+            <span id="current-price-display">$200</span>
           </div>
         </div>
 
@@ -802,6 +809,26 @@
         closeMobileMenuButton.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
         });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const priceRangeSlider = document.getElementById("price-range-slider");
+        const currentPriceDisplay = document.getElementById(
+          "current-price-display"
+        );
+
+        // Function to update the displayed price
+        const updatePriceDisplay = () => {
+          currentPriceDisplay.textContent = `$${priceRangeSlider.value}`;
+        };
+
+        // Set the initial display value
+        updatePriceDisplay();
+
+        // Add an event listener to update the price when the slider input changes
+        priceRangeSlider.addEventListener("input", updatePriceDisplay);
       });
     </script>
   </body>
