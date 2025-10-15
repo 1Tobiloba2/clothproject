@@ -1167,7 +1167,8 @@
           class="flex flex-col md:flex-row justify-between items-center py-2 text-sm"
         >
           <p class="text-gray-500 mb-4 md:mb-0">
-            Shop.co © 2000-2023, All Rights Reserved
+            Shop.co &copy; 2000-<span id="current-year-footer"></span>, All
+            Rights Reserved
           </p>
 
           <div class="flex space-x-2">
@@ -1260,6 +1261,17 @@
         closeMobileMenuButton.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
         });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentYearSpan = document.getElementById("current-year-footer");
+        if (currentYearSpan) {
+          // Check if the element exists
+          const currentYear = new Date().getFullYear();
+          currentYearSpan.textContent = currentYear;
+        }
       });
     </script>
   </body>
