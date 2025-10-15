@@ -219,7 +219,7 @@
             type="range"
             min="20"
             max="200"
-            value="200"
+            value="20"
             class="w-full"
             id="price-range-slider"
           />
@@ -227,7 +227,7 @@
             class="flex justify-between text-xs font-medium text-gray-600 mt-2"
           >
             <span>$20</span>
-            <span id="current-price-display">$200</span>
+            <span id="current-price-display">$20</span>
           </div>
         </div>
 
@@ -769,6 +769,7 @@
       </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
       function toggleFilters() {
         const sidebar = document.getElementById("mobile-filters-sidebar");
@@ -818,16 +819,10 @@
         const currentPriceDisplay = document.getElementById(
           "current-price-display"
         );
-
-        // Function to update the displayed price
         const updatePriceDisplay = () => {
           currentPriceDisplay.textContent = `$${priceRangeSlider.value}`;
         };
-
-        // Set the initial display value
         updatePriceDisplay();
-
-        // Add an event listener to update the price when the slider input changes
         priceRangeSlider.addEventListener("input", updatePriceDisplay);
       });
     </script>
