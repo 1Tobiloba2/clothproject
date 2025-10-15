@@ -25,7 +25,7 @@
             <h1 class="text-2xl font-bold">
               SHOP<span class="text-gray-400">.CO</span>
             </h1>
-            <nav class="hidden md:flex space-x-6">
+            <nav id="desktop-nav" class="hidden md:flex space-x-6">
               <a href="#" class="font-medium">Shop</a>
               <a href="#" class="font-medium">On Sale</a>
               <a href="#" class="font-medium">New Arrivals</a>
@@ -49,15 +49,47 @@
               <button class="p-2 rounded-full hover:bg-gray-100">
                 <i class="far fa-user text-gray-600"></i>
               </button>
+              <button
+                id="mobile-menu-button"
+                class="md:hidden p-2 rounded-full hover:bg-gray-100"
+              >
+                <i class="fas fa-bars text-gray-600"></i>
+              </button>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center py-8"
+      >
+        <button
+          id="close-mobile-menu"
+          class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100"
+        >
+          <i class="fas fa-times text-gray-600 text-xl"></i>
+        </button>
+        <nav class="flex flex-col space-y-6 text-lg">
+          <a href="#" class="font-medium">Shop</a>
+          <a href="#" class="font-medium">On Sale</a>
+          <a href="#" class="font-medium">New Arrivals</a>
+          <a href="#" class="font-medium">Brands</a>
+        </nav>
+        <div class="mt-8 relative w-64">
+          <input
+            type="text"
+            placeholder="Search for products..."
+            class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full"
+          />
+          <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
         </div>
       </div>
     </header>
 
     <!-- Breadcrumb -->
     <div class="container mx-auto px-2 py-2 text-sm text-gray-500">
-      Home <span class="mx-1">&gt;</span>
+      <a href="index.html">Home </a> <span class="mx-1">&gt;</span>
       <span class="font-semibold text-black">Cart</span>
     </div>
 
@@ -464,8 +496,6 @@
           increaseBtn.addEventListener("click", () => {
             count++;
             quantityLabel.textContent = count;
-            // You can also add logic here to update total price or other summary fields
-            // updateCartSummary();
           });
 
           decreaseBtn.addEventListener("click", () => {
@@ -477,12 +507,23 @@
             }
           });
         });
+      });
+    </script>
 
-        // Function to update cart summary (you'll need to implement this based on your full cart logic)
-        // function updateCartSummary() {
-        //   console.log("Cart summary needs to be updated!");
-        //   // Example: Recalculate subtotal, discount, total based on all item quantities and prices
-        // }
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMobileMenuButton =
+          document.getElementById("close-mobile-menu");
+
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.remove("hidden");
+        });
+
+        closeMobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
       });
     </script>
   </body>
