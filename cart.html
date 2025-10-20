@@ -167,6 +167,7 @@
           </div>
 
           <button
+            id="checkout-button"
             class="w-full bg-black text-white py-4 rounded-full text-lg font-semibold flex items-center justify-center space-x-2 hover:bg-gray-800 transition-colors"
           >
             <span>Go to Checkout</span>
@@ -394,7 +395,7 @@
       </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Consolidated JavaScript -->
     <script>
       let cart = []; // Initialize cart array
       const DELIVERY_FEE = 15;
@@ -438,6 +439,7 @@
           }
         }
       }
+
       function renderCartItems() {
         cartItemsContainer.innerHTML = "";
 
@@ -567,6 +569,51 @@
         updateCartSummary();
       }
 
+      // FUNCTION TO SEND CART TO WHATSAPP
+      function sendCartToWhatsApp() {
+        // Your WhatsApp number without the '+' sign and any spaces
+        const phoneNumber = "2348133708340"; // Your WhatsApp number
+        let message = "My Shopping Cart:\n\n";
+
+        if (cart.length === 0) {
+          message += "Your cart is empty. Start shopping!";
+        } else {
+          cart.forEach((item) => {
+            message += `${item.name} (Size: ${item.size}, Color: ${
+              item.color
+            }) - Quantity: ${item.quantity} x $${item.price.toFixed(2)} = $${(
+              item.quantity * item.price
+            ).toFixed(2)}\n`;
+          });
+
+          // Calculate summary for the message
+          let subtotal = 0;
+          cart.forEach((item) => {
+            subtotal += item.price * item.quantity;
+          });
+
+          const discountAmount = subtotal * (DISCOUNT_PERCENTAGE / 100);
+          let total = subtotal - discountAmount;
+          let finalDeliveryFee = 0;
+
+          if (subtotal > 0) {
+            finalDeliveryFee = DELIVERY_FEE;
+            total += finalDeliveryFee;
+          }
+
+          message += `\nSubtotal: $${subtotal.toFixed(2)}`;
+          message += `\nDiscount (${DISCOUNT_PERCENTAGE}%): -$${discountAmount.toFixed(
+            2
+          )}`;
+          message += `\nDelivery Fee: $${finalDeliveryFee.toFixed(2)}`;
+          message += `\nTotal: $${total.toFixed(2)}`;
+        }
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappUrl, "_blank"); // Opens WhatsApp in a new tab/window
+      }
+
       // Initialize cart on page load
       document.addEventListener("DOMContentLoaded", () => {
         cart = getCart(); // Load cart from localStorage
@@ -591,6 +638,12 @@
         if (currentYearSpan) {
           const currentYear = new Date().getFullYear();
           currentYearSpan.textContent = currentYear;
+        }
+
+        // Add event listener for the "Go to Checkout" button
+        const checkoutButton = document.getElementById("checkout-button");
+        if (checkoutButton) {
+          checkoutButton.addEventListener("click", sendCartToWhatsApp);
         }
       });
     </script>
