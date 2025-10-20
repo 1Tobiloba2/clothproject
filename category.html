@@ -114,9 +114,17 @@
               <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
             </div>
             <div class="flex space-x-4">
-              <button class="p-2 rounded-full hover:bg-gray-100">
+              <a
+                href="cart.html"
+                class="relative p-2 rounded-full hover:bg-gray-100"
+              >
                 <i class="fas fa-shopping-cart text-gray-600"></i>
-              </button>
+                <span
+                  id="cart-count"
+                  class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                  >0</span
+                >
+              </a>
               <button class="p-2 rounded-full hover:bg-gray-100">
                 <i class="far fa-user text-gray-600"></i>
               </button>
@@ -358,7 +366,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$145</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$145</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="1"
+                data-name="Gradient Graphic T-shirt"
+                data-price="145.00"
+                data-image="images/2Frame 33.png"
+                data-size="Large"
+                data-color="White"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
 
           <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
@@ -378,7 +399,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$120</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$120</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="2"
+                data-name="Polo T-Shirt"
+                data-price="120.00"
+                data-image="images/2Frame 34 (2).png"
+                data-size="Medium"
+                data-color="Blue"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
 
           <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
@@ -398,7 +432,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$190</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$190</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="3"
+                data-name="Denim Jeans"
+                data-price="190.00"
+                data-image="images/2Frame 38.png"
+                data-size="Large"
+                data-color="Dark Blue"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
 
           <!-- 2 -->
@@ -419,7 +466,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$145</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$145</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="4"
+                data-name="Skinny Fit Jeans"
+                data-price="145.00"
+                data-image="images/image 8.png"
+                data-size="Medium"
+                data-color="Light Blue"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
 
           <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
@@ -439,7 +499,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$120</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$120</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="5"
+                data-name="Checkered Shirt"
+                data-price="120.00"
+                data-image="images/Frame 34.png"
+                data-size="Small"
+                data-color="Red"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
 
           <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
@@ -459,7 +532,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$190</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$190</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="6"
+                data-name="Sleeve Striped T-shirt"
+                data-price="190.00"
+                data-image="images/image 10.png"
+                data-size="Large"
+                data-color="Black"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
 
           <!-- 3 -->
@@ -480,7 +566,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$145</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$145</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="7"
+                data-name="Vertical Striped Shirt"
+                data-price="145.00"
+                data-image="images/Frame 32.png"
+                data-size="XL"
+                data-color="Green"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
 
           <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
@@ -500,7 +599,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$120</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$120</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="8"
+                data-name="Courage Graphic T-shirt"
+                data-price="120.00"
+                data-image="images/Frame 33.png"
+                data-size="Medium"
+                data-color="Grey"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
 
           <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
@@ -520,7 +632,20 @@
               </div>
               <span class="text-gray-500 text-sm ml-2">4.5/5</span>
             </div>
-            <div class="text-base font-bold mt-auto">$190</div>
+            <div class="flex justify-between items-center w-full mt-auto">
+              <div class="text-base font-bold">$190</div>
+              <button
+                class="add-to-cart-btn bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-gray-800 transition-colors"
+                data-id="9"
+                data-name="Loose Fit Bermuda Shorts"
+                data-price="190.00"
+                data-image="images/Frame 34 (2).png"
+                data-size="M"
+                data-color="Beige"
+              >
+                <i class="fas fa-shopping-cart mr-1"></i> Add
+              </button>
+            </div>
           </div>
         </div>
         <!-- Pagination Section -->
@@ -835,33 +960,98 @@
 
     <!-- JavaScript -->
     <script>
-      function toggleFilters() {
-        const sidebar = document.getElementById("mobile-filters-sidebar");
-        const overlay = document.getElementById("filter-overlay");
-        const isOpen = sidebar.classList.contains("open");
+      // Function to get cart from localStorage
+      function getCart() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+      }
 
-        if (isOpen) {
-          sidebar.classList.remove("open");
-          overlay.classList.add("hidden");
-          overlay.classList.remove("opacity-100");
-          overlay.classList.add("opacity-0");
-          document.body.style.overflow = "";
-        } else {
-          sidebar.classList.add("open");
-          overlay.classList.remove("hidden");
-          overlay.classList.remove("opacity-0");
-          overlay.classList.add("opacity-100");
-          document.body.style.overflow = "hidden";
+      // Function to save cart to localStorage
+      function saveCart(cart) {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      // Function to update cart count in header
+      function updateCartCount() {
+        const cart = getCart();
+        const cartCountElement = document.getElementById("cart-count");
+        if (cartCountElement) {
+          const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+          cartCountElement.textContent = totalItems;
+          if (totalItems > 0) {
+            cartCountElement.classList.remove("hidden");
+          } else {
+            cartCountElement.classList.add("hidden");
+          }
         }
       }
 
-      document
-        .getElementById("filter-overlay")
-        .addEventListener("click", toggleFilters);
-    </script>
-
-    <script>
+      // Add to Cart functionality
       document.addEventListener("DOMContentLoaded", () => {
+        const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+        addToCartButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const productId = event.currentTarget.dataset.id;
+            const productName = event.currentTarget.dataset.name;
+            const productPrice = parseFloat(event.currentTarget.dataset.price);
+            const productImage = event.currentTarget.dataset.image;
+            const productSize = event.currentTarget.dataset.size; // Default size
+            const productColor = event.currentTarget.dataset.color; // Default color
+
+            let cart = getCart();
+            const existingItemIndex = cart.findIndex(
+              (item) => item.id === productId
+            );
+
+            if (existingItemIndex > -1) {
+              cart[existingItemIndex].quantity++;
+            } else {
+              cart.push({
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImage,
+                size: productSize,
+                color: productColor,
+                quantity: 1,
+              });
+            }
+
+            saveCart(cart);
+            updateCartCount();
+            // Redirect to cart.html immediately after adding to cart
+            window.location.href = "cart.html";
+          });
+        });
+
+        // Initialize cart count on page load
+        updateCartCount();
+
+        // Existing mobile menu and filter scripts
+        function toggleFilters() {
+          const sidebar = document.getElementById("mobile-filters-sidebar");
+          const overlay = document.getElementById("filter-overlay");
+          const isOpen = sidebar.classList.contains("open");
+
+          if (isOpen) {
+            sidebar.classList.remove("open");
+            overlay.classList.add("hidden");
+            overlay.classList.remove("opacity-100");
+            overlay.classList.add("opacity-0");
+            document.body.style.overflow = "";
+          } else {
+            sidebar.classList.add("open");
+            overlay.classList.remove("hidden");
+            overlay.classList.remove("opacity-0");
+            overlay.classList.add("opacity-100");
+            document.body.style.overflow = "hidden";
+          }
+        }
+
+        document
+          .getElementById("filter-overlay")
+          .addEventListener("click", toggleFilters);
+
         const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
         const closeMobileMenuButton =
@@ -874,11 +1064,7 @@
         closeMobileMenuButton.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
         });
-      });
-    </script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
         const priceRangeSlider = document.getElementById("price-range-slider");
         const currentPriceDisplay = document.getElementById(
           "current-price-display"
@@ -888,14 +1074,9 @@
         };
         updatePriceDisplay();
         priceRangeSlider.addEventListener("input", updatePriceDisplay);
-      });
-    </script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
         const currentYearSpan = document.getElementById("current-year-footer");
         if (currentYearSpan) {
-          // Check if the element exists
           const currentYear = new Date().getFullYear();
           currentYearSpan.textContent = currentYear;
         }

@@ -43,9 +43,17 @@
               <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
             </div>
             <div class="flex space-x-4">
-              <button class="p-2 rounded-full hover:bg-gray-100">
+              <a
+                href="cart.html"
+                class="relative p-2 rounded-full hover:bg-gray-100"
+              >
                 <i class="fas fa-shopping-cart text-gray-600"></i>
-              </button>
+                <span
+                  id="cart-count"
+                  class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                  >0</span
+                >
+              </a>
               <button class="p-2 rounded-full hover:bg-gray-100">
                 <i class="far fa-user text-gray-600"></i>
               </button>
@@ -101,131 +109,14 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Cart Items Section -->
-        <div class="lg:col-span-2 space-y-6">
-          <!-- Cart Item 1 -->
-          <div
-            class="flex items-center p-4 border border-gray-200 rounded-xl shadow-sm"
+        <div id="cart-items-container" class="lg:col-span-2 space-y-6">
+          <!-- Cart items will be dynamically loaded here -->
+          <p
+            id="empty-cart-message"
+            class="text-gray-500 text-center text-lg hidden"
           >
-            <img
-              src="images/2Frame 32.png"
-              alt="Gradient Graphic T-shirt"
-              class="w-24 h-24 object-cover rounded-md mr-4"
-            />
-            <div class="flex-grow">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-semibold text-lg">
-                    Gradient Graphic T-shirt
-                  </h3>
-                  <p class="text-sm text-gray-500">Size: Large</p>
-                  <p class="text-sm text-gray-500">Color: White</p>
-                </div>
-                <button class="text-gray-400 hover:text-red-500">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <p class="text-xl font-bold">$145</p>
-                <div
-                  class="flex items-center space-x-2 border border-gray-300 rounded-full px-2 py-1"
-                >
-                  <button
-                    class="decrease-btn w-6 h-6 flex items-center justify-center text-gray-600"
-                  >
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <span class="quantity-label font-medium">1</span>
-                  <button
-                    class="increase-btn w-6 h-6 flex items-center justify-center text-gray-600"
-                  >
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cart Item 2 -->
-          <div
-            class="flex items-center p-4 border border-gray-200 rounded-xl shadow-sm"
-          >
-            <img
-              src="images/Frame 34.png"
-              alt="Checkered Shirt"
-              class="w-24 h-24 object-cover rounded-md mr-4"
-            />
-            <div class="flex-grow">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-semibold text-lg">Checkered Shirt</h3>
-                  <p class="text-sm text-gray-500">Size: Medium</p>
-                  <p class="text-sm text-gray-500">Color: Red</p>
-                </div>
-                <button class="text-gray-400 hover:text-red-500">
-                  <i class="fas fa-trash-alt text-red"></i>
-                </button>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <p class="text-xl font-bold">$180</p>
-                <div
-                  class="flex items-center space-x-2 border border-gray-300 rounded-full px-2 py-1"
-                >
-                  <button
-                    class="decrease-btn w-6 h-6 flex items-center justify-center text-gray-600"
-                  >
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <span class="quantity-label font-medium">1</span>
-                  <button
-                    class="increase-btn w-6 h-6 flex items-center justify-center text-gray-600"
-                  >
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cart Item 3 -->
-          <div
-            class="flex items-center p-4 border border-gray-200 rounded-xl shadow-sm"
-          >
-            <img
-              src="images/image 8.png"
-              alt="Skinny Fit Jeans"
-              class="w-24 h-24 object-cover rounded-md mr-4"
-            />
-            <div class="flex-grow">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-semibold text-lg">Skinny Fit Jeans</h3>
-                  <p class="text-sm text-gray-500">Size: Large</p>
-                  <p class="text-sm text-gray-500">Color: Blue</p>
-                </div>
-                <button class="text-gray-400 hover:text-red-500">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <p class="text-xl font-bold">$240</p>
-                <div
-                  class="flex items-center space-x-2 border border-gray-300 rounded-full px-2 py-1"
-                >
-                  <button
-                    class="decrease-btn w-6 h-6 flex items-center justify-center text-gray-600"
-                  >
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <span class="quantity-label font-medium">1</span>
-                  <button
-                    class="increase-btn w-6 h-6 flex items-center justify-center text-gray-600"
-                  >
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+            Your cart is empty. Start shopping!
+          </p>
         </div>
 
         <!-- Order Summary Section -->
@@ -235,15 +126,19 @@
           <div class="space-y-3 mb-6">
             <div class="flex justify-between items-center">
               <p class="text-gray-700">Subtotal</p>
-              <p class="font-semibold">$565</p>
+              <p id="subtotal-display" class="font-semibold">$0.00</p>
             </div>
             <div class="flex justify-between items-center">
-              <p class="text-gray-700">Discount (-20%)</p>
-              <p class="font-semibold text-red-500">-$113</p>
+              <p class="text-gray-700">
+                Discount (<span id="discount-percentage">0</span>%)
+              </p>
+              <p id="discount-display" class="font-semibold text-red-500">
+                -$0.00
+              </p>
             </div>
             <div class="flex justify-between items-center">
               <p class="text-gray-700">Delivery Fee</p>
-              <p class="font-semibold">$15</p>
+              <p id="delivery-fee-display" class="font-semibold">$0.00</p>
             </div>
           </div>
 
@@ -251,7 +146,7 @@
             class="flex justify-between items-center border-t border-gray-200 pt-4 mb-6"
           >
             <p class="text-lg font-bold">Total</p>
-            <p class="text-2xl font-extrabold">$467</p>
+            <p id="total-display" class="text-2xl font-extrabold">$0.00</p>
           </div>
 
           <div class="flex space-x-2 mb-4">
@@ -497,38 +392,184 @@
 
     <!-- JavaScript -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Select all quantity containers
-        const quantityControls = document.querySelectorAll(
-          ".flex.items-center.space-x-2.border"
-        );
+      let cart = []; // Initialize cart array
+      const DELIVERY_FEE = 15;
+      const DISCOUNT_PERCENTAGE = 10; // 10% discount
 
-        quantityControls.forEach((control) => {
-          const decreaseBtn = control.querySelector(".decrease-btn");
-          const increaseBtn = control.querySelector(".increase-btn");
-          const quantityLabel = control.querySelector(".quantity-label");
+      const cartItemsContainer = document.getElementById(
+        "cart-items-container"
+      );
+      const emptyCartMessage = document.getElementById("empty-cart-message");
+      const subtotalDisplay = document.getElementById("subtotal-display");
+      const discountPercentageDisplay = document.getElementById(
+        "discount-percentage"
+      );
+      const discountDisplay = document.getElementById("discount-display");
+      const deliveryFeeDisplay = document.getElementById(
+        "delivery-fee-display"
+      );
+      const totalDisplay = document.getElementById("total-display");
+      const cartCountElement = document.getElementById("cart-count"); // For header cart count
 
-          let count = parseInt(quantityLabel.textContent);
+      // Function to get cart from localStorage
+      function getCart() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+      }
 
-          increaseBtn.addEventListener("click", () => {
-            count++;
-            quantityLabel.textContent = count;
-          });
+      // Function to save cart to localStorage
+      function saveCartToLocalStorage() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
 
-          decreaseBtn.addEventListener("click", () => {
-            if (count > 1) {
-              // Prevent quantity from going below 1
-              count--;
-              quantityLabel.textContent = count;
-              // updateCartSummary();
-            }
+      function updateHeaderCartCount() {
+        const currentCart = getCart();
+        const uniqueProductCount = currentCart.length;
+
+        if (cartCountElement) {
+          cartCountElement.textContent = uniqueProductCount;
+          if (uniqueProductCount > 0) {
+            cartCountElement.classList.remove("hidden");
+          } else {
+            cartCountElement.classList.add("hidden");
+          }
+        }
+      }
+      function renderCartItems() {
+        cartItemsContainer.innerHTML = "";
+
+        if (cart.length === 0) {
+          emptyCartMessage.classList.remove("hidden");
+          return;
+        } else {
+          emptyCartMessage.classList.add("hidden");
+        }
+
+        cart.forEach((item) => {
+          const cartItemDiv = document.createElement("div");
+          cartItemDiv.classList.add(
+            "flex",
+            "items-center",
+            "p-4",
+            "border",
+            "border-gray-200",
+            "rounded-xl",
+            "shadow-sm"
+          );
+          cartItemDiv.innerHTML = `
+            <img src="${item.image}" alt="${
+            item.name
+          }" class="w-24 h-24 object-cover rounded-md mr-4"/>
+            <div class="flex-grow">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-semibold text-lg">${item.name}</h3>
+                  <p class="text-sm text-gray-500">Size: ${item.size}</p>
+                  <p class="text-sm text-gray-500">Color: ${item.color}</p>
+                </div>
+                <button class="text-gray-400 hover:text-red-500 remove-item-btn" data-id="${
+                  item.id
+                }">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <p class="text-xl font-bold">$${item.price.toFixed(2)}</p>
+                <div class="flex items-center space-x-2 border border-gray-300 rounded-full px-2 py-1">
+                  <button
+                    class="decrease-btn w-6 h-6 flex items-center justify-center text-gray-600" data-id="${
+                      item.id
+                    }">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <span class="quantity-label font-medium">${
+                    item.quantity
+                  }</span>
+                  <button
+                    class="increase-btn w-6 h-6 flex items-center justify-center text-gray-600" data-id="${
+                      item.id
+                    }">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+          cartItemsContainer.appendChild(cartItemDiv);
+        });
+
+        document.querySelectorAll(".increase-btn").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const id = event.currentTarget.dataset.id;
+            updateQuantity(id, 1);
           });
         });
-      });
-    </script>
 
-    <script>
+        document.querySelectorAll(".decrease-btn").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const id = event.currentTarget.dataset.id;
+            updateQuantity(id, -1);
+          });
+        });
+
+        document.querySelectorAll(".remove-item-btn").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const id = event.currentTarget.dataset.id;
+            removeItem(id);
+          });
+        });
+      }
+
+      function updateCartSummary() {
+        let subtotal = 0;
+        cart.forEach((item) => {
+          subtotal += item.price * item.quantity;
+        });
+
+        const discountAmount = subtotal * (DISCOUNT_PERCENTAGE / 100);
+        let total = subtotal - discountAmount;
+        let finalDeliveryFee = 0;
+
+        if (subtotal > 0) {
+          // Only add delivery fee if there are items in the cart
+          finalDeliveryFee = DELIVERY_FEE;
+          total += finalDeliveryFee;
+        }
+
+        subtotalDisplay.textContent = `$${subtotal.toFixed(2)}`;
+        discountPercentageDisplay.textContent = DISCOUNT_PERCENTAGE;
+        discountDisplay.textContent = `-$${discountAmount.toFixed(2)}`;
+        deliveryFeeDisplay.textContent = `$${finalDeliveryFee.toFixed(2)}`;
+        totalDisplay.textContent = `$${total.toFixed(2)}`;
+
+        saveCartToLocalStorage();
+        updateHeaderCartCount(); // Update header cart count when summary changes
+      }
+
+      function updateQuantity(id, change) {
+        const itemIndex = cart.findIndex((item) => item.id === id);
+        if (itemIndex > -1) {
+          cart[itemIndex].quantity += change;
+          if (cart[itemIndex].quantity < 1) {
+            cart[itemIndex].quantity = 1; // Prevent quantity from going below 1
+          }
+          renderCartItems();
+          updateCartSummary();
+        }
+      }
+
+      function removeItem(id) {
+        cart = cart.filter((item) => item.id !== id);
+        renderCartItems();
+        updateCartSummary();
+      }
+
+      // Initialize cart on page load
       document.addEventListener("DOMContentLoaded", () => {
+        cart = getCart(); // Load cart from localStorage
+        renderCartItems();
+        updateCartSummary();
+        updateHeaderCartCount(); // Also update on cart page load
+
         const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
         const closeMobileMenuButton =
@@ -541,14 +582,9 @@
         closeMobileMenuButton.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
         });
-      });
-    </script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
         const currentYearSpan = document.getElementById("current-year-footer");
         if (currentYearSpan) {
-          // Check if the element exists
           const currentYear = new Date().getFullYear();
           currentYearSpan.textContent = currentYear;
         }
