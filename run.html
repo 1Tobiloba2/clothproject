@@ -1,96 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Animated Counter (200+)</title>
-    <!-- Tailwind CDN for quick styling -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart with 20% Discount Summary</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Small visual polish */
-      .stat-card {
-        background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
-      }
-    </style>
   </head>
-  <body class="min-h-screen flex items-center justify-center bg-gray-50 p-6">
-    <section
-      class="stat-card max-w-sm w-full rounded-2xl shadow-lg p-6 text-center"
-    >
-      <!-- Counter block: change data-target to whatever number you want -->
-      <div>
-        <h3 class="text-4xl font-extrabold">
-          <span
-            class="js-counter"
-            data-target="200"
-            data-suffix="+"
-            data-duration="1800"
-            aria-live="polite"
-            >0</span
+  <body class="bg-gray-100 p-6">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold mb-6 text-center text-blue-700">
+        🛍️ Simple Store (20% Discount)
+      </h1>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+        <!-- Product 1 -->
+        <div
+          class="bg-white rounded-2xl shadow hover:shadow-lg p-4 flex flex-col items-center"
+        >
+          <img
+            src="https://via.placeholder.com/200x150?text=T-shirt"
+            alt="T-shirt"
+            class="rounded-lg mb-3"
+          />
+          <h3 class="font-bold text-lg">T-shirt</h3>
+          <p class="text-gray-500 mb-2">$20.00</p>
+          <button
+            class="add-to-cart bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            data-name="T-shirt"
+            data-price="20"
+            data-image="https://via.placeholder.com/80x80?text=T-shirt"
           >
-        </h3>
-        <p class="text-gray-600 mt-1">International Brands</p>
+            Add to Cart
+          </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div
+          class="bg-white rounded-2xl shadow hover:shadow-lg p-4 flex flex-col items-center"
+        >
+          <img
+            src="https://via.placeholder.com/200x150?text=Sneakers"
+            alt="Sneakers"
+            class="rounded-lg mb-3"
+          />
+          <h3 class="font-bold text-lg">Sneakers</h3>
+          <p class="text-gray-500 mb-2">$45.00</p>
+          <button
+            class="add-to-cart bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            data-name="Sneakers"
+            data-price="45"
+            data-image="https://via.placeholder.com/80x80?text=Sneakers"
+          >
+            Add to Cart
+          </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div
+          class="bg-white rounded-2xl shadow hover:shadow-lg p-4 flex flex-col items-center"
+        >
+          <img
+            src="https://via.placeholder.com/200x150?text=Bag"
+            alt="Bag"
+            class="rounded-lg mb-3"
+          />
+          <h3 class="font-bold text-lg">Bag</h3>
+          <p class="text-gray-500 mb-2">$35.00</p>
+          <button
+            class="add-to-cart bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            data-name="Bag"
+            data-price="35"
+            data-image="https://via.placeholder.com/80x80?text=Bag"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
-    </section>
+
+      <!-- Cart Section -->
+      <div id="cart" class="bg-white rounded-2xl shadow p-6">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">🛒 Your Cart</h2>
+        <ul id="cart-items" class="divide-y divide-gray-200 mb-6"></ul>
+
+        <!-- Summary -->
+        <div class="border-t pt-4 space-y-2 text-right">
+          <div class="flex justify-between text-gray-700">
+            <span>Subtotal:</span>
+            <span>$<span id="cart-subtotal">0.00</span></span>
+          </div>
+
+          <div class="flex justify-between text-green-700 font-semibold">
+            <span>Discount (20%):</span>
+            <span>-$<span id="cart-discount">0.00</span></span>
+          </div>
+
+          <div class="flex justify-between text-xl font-bold border-t pt-2">
+            <span>Total (After Discount):</span>
+            <span>$<span id="cart-total">0.00</span></span>
+          </div>
+        </div>
+
+        <!-- Clear Cart -->
+        <div class="mt-5 text-right">
+          <button
+            id="clear-cart"
+            class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+          >
+            Clear Cart
+          </button>
+        </div>
+      </div>
+    </div>
 
     <script>
-      (function () {
-        const counters = document.querySelectorAll(".js-counter");
+      const cartItems = [];
+      const cartList = document.getElementById("cart-items");
+      const cartSubtotal = document.getElementById("cart-subtotal");
+      const cartDiscount = document.getElementById("cart-discount");
+      const cartTotal = document.getElementById("cart-total");
+      const clearCartBtn = document.getElementById("clear-cart");
 
-        function animateCounter(el) {
-          const target = parseInt(el.getAttribute("data-target") || "0", 10);
-          const suffix = el.getAttribute("data-suffix") || "";
-          const duration = parseInt(
-            el.getAttribute("data-duration") || "1500",
-            10
-          );
-          if (isNaN(target) || target < 0) return;
+      // Add to cart
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.name;
+          const price = parseFloat(button.dataset.price);
+          const image = button.dataset.image;
 
-          const start = 0;
-          const startTime = performance.now();
+          cartItems.push({ name, price, image });
+          renderCart();
+        });
+      });
 
-          function tick(now) {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+      // Render cart
+      function renderCart() {
+        cartList.innerHTML = "";
+        let subtotal = 0;
 
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(start + (target - start) * eased);
-            el.textContent = current.toLocaleString() + suffix;
+        cartItems.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.className = "flex items-center justify-between py-3";
 
-            if (progress < 1) {
-              requestAnimationFrame(tick);
-            } else {
-              el.textContent = target.toLocaleString() + suffix;
-            }
-          }
+          li.innerHTML = `
+          <div class="flex items-center space-x-3">
+            <img src="${item.image}" alt="${
+            item.name
+          }" class="w-12 h-12 rounded" />
+            <div>
+              <p class="font-medium text-gray-800">${item.name}</p>
+              <p class="text-gray-500 text-sm">$${item.price.toFixed(2)}</p>
+            </div>
+          </div>
+          <button class="delete-item text-red-600 hover:underline text-sm" data-index="${index}">
+            Delete
+          </button>
+        `;
 
-          requestAnimationFrame(tick);
-        }
+          cartList.appendChild(li);
+          subtotal += item.price;
+        });
 
-        if ("IntersectionObserver" in window) {
-          const obs = new IntersectionObserver(
-            (entries, observer) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  animateCounter(entry.target);
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            { threshold: 0.4 }
-          );
+        const discountAmount = subtotal * 0.2;
+        const totalAfterDiscount = subtotal - discountAmount;
 
-          counters.forEach((c) => obs.observe(c));
-        } else {
-          // fallback: animate immediately
-          counters.forEach((c) => animateCounter(c));
-        }
+        cartSubtotal.textContent = subtotal.toFixed(2);
+        cartDiscount.textContent = discountAmount.toFixed(2);
+        cartTotal.textContent = totalAfterDiscount.toFixed(2);
 
-        // Optional: allow rerunning the animation programmatically
-        window.animateCounters = function () {
-          counters.forEach((c) => animateCounter(c));
-        };
-      })();
+        // Delete item
+        document.querySelectorAll(".delete-item").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const i = e.target.dataset.index;
+            cartItems.splice(i, 1);
+            renderCart();
+          });
+        });
+      }
+
+      // Clear cart
+      clearCartBtn.addEventListener("click", () => {
+        cartItems.length = 0;
+        renderCart();
+      });
     </script>
   </body>
 </html>
