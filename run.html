@@ -3,185 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart with 20% Discount Summary</title>
+    <title>Product Grid</title>
+    <!-- You need Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- You need Font Awesome for the star icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
-  <body class="bg-gray-100 p-6">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-3xl font-bold mb-6 text-center text-blue-700">
-        🛍️ Simple Store (20% Discount)
-      </h1>
-
-      <!-- Product Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
-        <!-- Product 1 -->
-        <div
-          class="bg-white rounded-2xl shadow hover:shadow-lg p-4 flex flex-col items-center"
-        >
-          <img
-            src="https://via.placeholder.com/200x150?text=T-shirt"
-            alt="T-shirt"
-            class="rounded-lg mb-3"
-          />
-          <h3 class="font-bold text-lg">T-shirt</h3>
-          <p class="text-gray-500 mb-2">$20.00</p>
-          <button
-            class="add-to-cart bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-            data-name="T-shirt"
-            data-price="20"
-            data-image="https://via.placeholder.com/80x80?text=T-shirt"
+  <body class="p-8">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+      <!-- Product Card 1 -->
+      <div class="product-card p-4 text-left border rounded-lg">
+        <a href="product.html">
+          <div class="h-64 flex items-center justify-center mb-4">
+            <img
+              src="https://via.placeholder.com/200x250.png?text=T-Shirt"
+              alt="T-shirt"
+              class="h-full object-contain"
+            />
+          </div>
+          <h3 class="font-bold text-l mb-1">T-shirt with Tape Details</h3>
+        </a>
+        <div class="star-rating-container flex items-center mb-2">
+          <div
+            class="star-rating flex text-gray-300 cursor-pointer text-l select-none"
           >
-            Add to Cart
-          </button>
+            <i class="fas fa-star" data-value="1"></i>
+            <i class="fas fa-star" data-value="2"></i>
+            <i class="fas fa-star" data-value="3"></i>
+            <i class="fas fa-star" data-value="4"></i>
+            <i class="fas fa-star" data-value="5"></i>
+          </div>
+          <span class="rating-value text-gray-600 font-semibold text-l ml-3"
+            >0.0/5</span
+          >
         </div>
+        <p class="font-bold text-lg">$120</p>
+      </div>
 
-        <!-- Product 2 -->
-        <div
-          class="bg-white rounded-2xl shadow hover:shadow-lg p-4 flex flex-col items-center"
-        >
+      <!-- Product Card 2 -->
+      <div class="product-card p-4 text-left border rounded-lg">
+        <div class="h-64 flex items-center justify-center mb-4">
           <img
-            src="https://via.placeholder.com/200x150?text=Sneakers"
-            alt="Sneakers"
-            class="rounded-lg mb-3"
+            src="https://via.placeholder.com/200x250.png?text=Jeans"
+            alt="Jeans"
+            class="h-full object-contain"
           />
-          <h3 class="font-bold text-lg">Sneakers</h3>
-          <p class="text-gray-500 mb-2">$45.00</p>
-          <button
-            class="add-to-cart bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-            data-name="Sneakers"
-            data-price="45"
-            data-image="https://via.placeholder.com/80x80?text=Sneakers"
-          >
-            Add to Cart
-          </button>
         </div>
-
-        <!-- Product 3 -->
-        <div
-          class="bg-white rounded-2xl shadow hover:shadow-lg p-4 flex flex-col items-center"
-        >
-          <img
-            src="https://via.placeholder.com/200x150?text=Bag"
-            alt="Bag"
-            class="rounded-lg mb-3"
-          />
-          <h3 class="font-bold text-lg">Bag</h3>
-          <p class="text-gray-500 mb-2">$35.00</p>
-          <button
-            class="add-to-cart bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-            data-name="Bag"
-            data-price="35"
-            data-image="https://via.placeholder.com/80x80?text=Bag"
+        <h3 class="font-bold text-l mb-1">Skinny Fit Jeans</h3>
+        <div class="star-rating-container flex items-center mb-2">
+          <div
+            class="star-rating flex text-gray-300 cursor-pointer text-l select-none"
           >
-            Add to Cart
-          </button>
+            <i class="fas fa-star" data-value="1"></i>
+            <i class="fas fa-star" data-value="2"></i>
+            <i class="fas fa-star" data-value="3"></i>
+            <i class="fas fa-star" data-value="4"></i>
+            <i class="fas fa-star" data-value="5"></i>
+          </div>
+          <span class="rating-value text-gray-600 font-semibold text-l ml-3"
+            >0.0/5</span
+          >
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="text-lg font-bold text-black">$240</span>
+          <span class="text-lg text-gray-400 line-through font-bold">$260</span>
+          <span
+            class="bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded-full"
+            >-20%</span
+          >
         </div>
       </div>
 
-      <!-- Cart Section -->
-      <div id="cart" class="bg-white rounded-2xl shadow p-6">
-        <h2 class="text-2xl font-bold mb-4 text-gray-800">🛒 Your Cart</h2>
-        <ul id="cart-items" class="divide-y divide-gray-200 mb-6"></ul>
-
-        <!-- Summary -->
-        <div class="border-t pt-4 space-y-2 text-right">
-          <div class="flex justify-between text-gray-700">
-            <span>Subtotal:</span>
-            <span>$<span id="cart-subtotal">0.00</span></span>
-          </div>
-
-          <div class="flex justify-between text-green-700 font-semibold">
-            <span>Discount (20%):</span>
-            <span>-$<span id="cart-discount">0.00</span></span>
-          </div>
-
-          <div class="flex justify-between text-xl font-bold border-t pt-2">
-            <span>Total (After Discount):</span>
-            <span>$<span id="cart-total">0.00</span></span>
-          </div>
+      <!-- Product Card 3 -->
+      <div class="product-card p-4 text-left border rounded-lg">
+        <div class="h-64 flex items-center justify-center mb-4">
+          <img
+            src="https://via.placeholder.com/200x250.png?text=Shirt"
+            alt="Checkered Shirt"
+            class="h-full object-contain"
+          />
         </div>
-
-        <!-- Clear Cart -->
-        <div class="mt-5 text-right">
-          <button
-            id="clear-cart"
-            class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+        <h3 class="font-bold text-l mb-1">Checkered Shirt</h3>
+        <div class="star-rating-container flex items-center mb-2">
+          <div
+            class="star-rating flex text-gray-300 cursor-pointer text-l select-none"
           >
-            Clear Cart
-          </button>
+            <i class="fas fa-star" data-value="1"></i>
+            <i class="fas fa-star" data-value="2"></i>
+            <i class="fas fa-star" data-value="3"></i>
+            <i class="fas fa-star" data-value="4"></i>
+            <i class="fas fa-star" data-value="5"></i>
+          </div>
+          <span class="rating-value text-gray-600 font-semibold text-l ml-3"
+            >0.0/5</span
+          >
+        </div>
+        <p class="font-bold text-lg">$180</p>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="product-card p-4 text-left border rounded-lg">
+        <div class="h-64 flex items-center justify-center mb-4">
+          <img
+            src="https://via.placeholder.com/200x250.png?text=Striped+T-Shirt"
+            alt="Striped T-shirt"
+            class="h-full object-contain"
+          />
+        </div>
+        <h3 class="font-bold text-l mb-1">Sleeve Striped T-shirt</h3>
+        <div class="star-rating-container flex items-center mb-2">
+          <div
+            class="star-rating flex text-gray-300 cursor-pointer text-l select-none"
+          >
+            <i class="fas fa-star" data-value="1"></i>
+            <i class="fas fa-star" data-value="2"></i>
+            <i class="fas fa-star" data-value="3"></i>
+            <i class="fas fa-star" data-value="4"></i>
+            <i class="fas fa-star" data-value="5"></i>
+          </div>
+          <span class="rating-value text-gray-600 font-semibold text-l ml-3"
+            >0.0/5</span
+          >
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="text-lg font-bold text-black">$130</span>
+          <span class="text-lg text-gray-400 line-through font-bold">$160</span>
+          <span
+            class="bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded-full"
+            >-30%</span
+          >
         </div>
       </div>
     </div>
 
+    <!-- The script that makes it all work -->
     <script>
-      const cartItems = [];
-      const cartList = document.getElementById("cart-items");
-      const cartSubtotal = document.getElementById("cart-subtotal");
-      const cartDiscount = document.getElementById("cart-discount");
-      const cartTotal = document.getElementById("cart-total");
-      const clearCartBtn = document.getElementById("clear-cart");
+      document.addEventListener("DOMContentLoaded", () => {
+        // Find all the individual product cards
+        const allProductCards = document.querySelectorAll(".product-card");
 
-      // Add to cart
-      document.querySelectorAll(".add-to-cart").forEach((button) => {
-        button.addEventListener("click", () => {
-          const name = button.dataset.name;
-          const price = parseFloat(button.dataset.price);
-          const image = button.dataset.image;
+        // Loop through each product card to set up its star rating
+        allProductCards.forEach((card) => {
+          const starContainer = card.querySelector(".star-rating");
+          const stars = starContainer.querySelectorAll(".fa-star");
+          const ratingValue = card.querySelector(".rating-value");
+          let currentRating = 0;
 
-          cartItems.push({ name, price, image });
-          renderCart();
-        });
-      });
+          const updateStars = (rating) => {
+            stars.forEach((star) => {
+              const starValue = parseInt(star.getAttribute("data-value"));
+              if (starValue <= rating) {
+                star.classList.remove("text-gray-300");
+                star.classList.add("text-yellow-400");
+              } else {
+                star.classList.remove("text-yellow-400");
+                star.classList.add("text-gray-300");
+              }
+            });
+            ratingValue.textContent = `${rating}.0/5`;
+            currentRating = rating;
+          };
 
-      // Render cart
-      function renderCart() {
-        cartList.innerHTML = "";
-        let subtotal = 0;
+          stars.forEach((star) => {
+            star.addEventListener("click", (event) => {
+              // Prevent the link from being followed when clicking a star
+              event.preventDefault();
+              event.stopPropagation();
 
-        cartItems.forEach((item, index) => {
-          const li = document.createElement("li");
-          li.className = "flex items-center justify-between py-3";
-
-          li.innerHTML = `
-          <div class="flex items-center space-x-3">
-            <img src="${item.image}" alt="${
-            item.name
-          }" class="w-12 h-12 rounded" />
-            <div>
-              <p class="font-medium text-gray-800">${item.name}</p>
-              <p class="text-gray-500 text-sm">$${item.price.toFixed(2)}</p>
-            </div>
-          </div>
-          <button class="delete-item text-red-600 hover:underline text-sm" data-index="${index}">
-            Delete
-          </button>
-        `;
-
-          cartList.appendChild(li);
-          subtotal += item.price;
-        });
-
-        const discountAmount = subtotal * 0.2;
-        const totalAfterDiscount = subtotal - discountAmount;
-
-        cartSubtotal.textContent = subtotal.toFixed(2);
-        cartDiscount.textContent = discountAmount.toFixed(2);
-        cartTotal.textContent = totalAfterDiscount.toFixed(2);
-
-        // Delete item
-        document.querySelectorAll(".delete-item").forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            const i = e.target.dataset.index;
-            cartItems.splice(i, 1);
-            renderCart();
+              const selectedValue = parseInt(star.getAttribute("data-value"));
+              updateStars(selectedValue);
+            });
           });
-        });
-      }
 
-      // Clear cart
-      clearCartBtn.addEventListener("click", () => {
-        cartItems.length = 0;
-        renderCart();
+          // Initialize this card's stars
+          updateStars(currentRating);
+        });
       });
     </script>
   </body>
