@@ -1382,16 +1382,11 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // 1. Select ALL elements with the class 'star-rating'
         const starRatingContainers = document.querySelectorAll(".star-rating");
 
-        // 2. Iterate over each star rating container found
         starRatingContainers.forEach((starRatingContainer) => {
-          // Get all stars *within the current container*
           const stars = starRatingContainer.querySelectorAll(".fa-star");
 
-          // Find the corresponding 'rating-value' span.
-          // It's a sibling of the starRatingContainer's parent div (the .flex element).
           const ratingValue =
             starRatingContainer.parentNode.querySelector(".rating-value");
 
@@ -1408,14 +1403,13 @@
                 star.classList.add("text-gray-300");
               }
             });
-            // Update the text content of this product's rating value span
+
             if (ratingValue) {
               ratingValue.textContent = `${rating}/5`;
             }
             currentRating = rating;
           };
 
-          // 3. Attach a click event listener to each star in the current container
           stars.forEach((star) => {
             star.addEventListener("click", () => {
               const selectedValue = parseInt(star.getAttribute("data-value"));
@@ -1423,7 +1417,6 @@
             });
           });
 
-          // Initialize the stars for this product
           updateStars(currentRating);
         });
       });
