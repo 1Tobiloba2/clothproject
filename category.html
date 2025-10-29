@@ -198,11 +198,12 @@
         <h2 class="text-lg font-bold hidden lg:block">Filters</h2>
 
         <!-- Categories -->
+
         <div class="pt-2">
           <div class="flex justify-between items-center mb-2 cursor-pointer">
             <h3 class="font-semibold text-base">Categories</h3>
           </div>
-          <ul class="space-y-3 text-sm text-gray-700">
+          <ul id="categoryFilters" class="space-y-3 text-sm text-gray-700">
             <li class="flex items-center space-x-2 cursor-pointer">
               <input type="checkbox" class="w-4 h-4" />
               <span>T-Shirts</span>
@@ -221,25 +222,34 @@
             </li>
           </ul>
         </div>
-
         <!-- Price -->
         <div class="py-4 border-t border-gray-200">
           <div class="flex justify-between items-center mb-4 cursor-pointer">
             <h3 class="font-semibold text-base">Price</h3>
           </div>
-          <input
-            type="range"
-            min="20"
-            max="200"
-            value="20"
-            class="w-full"
-            id="price-range-slider"
-          />
+          <div class="relative">
+            <input
+              type="range"
+              min="20"
+              max="200"
+              value="20"
+              class="w-full"
+              id="price-min-slider"
+            />
+            <input
+              type="range"
+              min="20"
+              max="200"
+              value="200"
+              class="w-full -mt-3"
+              id="price-max-slider"
+            />
+          </div>
           <div
             class="flex justify-between text-xs font-medium text-gray-600 mt-2"
           >
-            <span>$20</span>
-            <span id="current-price-display">$20</span>
+            <span id="current-min-display">$20</span>
+            <span id="current-max-display">$200</span>
           </div>
         </div>
 
@@ -248,31 +258,49 @@
           <div class="flex justify-between items-center mb-4 cursor-pointer">
             <h3 class="font-semibold text-base">Colors</h3>
           </div>
-          <div class="flex flex-wrap gap-2">
+          <div id="colorSwatches" class="flex flex-wrap gap-2">
             <span
-              class="w-6 h-6 rounded-full bg-blue-500 border border-gray-300 hover:border-black cursor-pointer"
+              class="color-swatch w-6 h-6 rounded-full bg-blue-500 border border-gray-300 hover:border-black cursor-pointer"
+              data-color="blue"
             ></span>
             <span
-              class="w-6 h-6 rounded-full bg-pink-500 border border-gray-300 hover:border-black cursor-pointer"
+              class="color-swatch w-6 h-6 rounded-full bg-pink-500 border border-gray-300 hover:border-black cursor-pointer"
+              data-color="pink"
             ></span>
             <span
-              class="w-6 h-6 rounded-full bg-yellow-400 border border-gray-300 hover:border-black cursor-pointer"
+              class="color-swatch w-6 h-6 rounded-full bg-yellow-400 border border-gray-300 hover:border-black cursor-pointer"
+              data-color="yellow"
             ></span>
             <span
-              class="w-6 h-6 rounded-full bg-purple-600 border border-gray-300 hover:border-black cursor-pointer"
+              class="color-swatch w-6 h-6 rounded-full bg-purple-600 border border-gray-300 hover:border-black cursor-pointer"
+              data-color="purple"
             ></span>
             <span
-              class="w-6 h-6 rounded-full bg-green-500 border border-gray-300 hover:border-black cursor-pointer"
+              class="color-swatch w-6 h-6 rounded-full bg-green-500 border border-gray-300 hover:border-black cursor-pointer"
+              data-color="green"
             ></span>
             <span
-              class="w-6 h-6 rounded-full bg-orange-500 border border-gray-300 hover:border-black cursor-pointer"
+              class="color-swatch w-6 h-6 rounded-full bg-orange-500 border border-gray-300 hover:border-black cursor-pointer"
+              data-color="orange"
             ></span>
             <span
-              class="w-6 h-6 rounded-full bg-black border-2 border-black cursor-pointer flex items-center justify-center text-white text-xs"
+              class="color-swatch w-6 h-6 rounded-full bg-black border-2 border-black cursor-pointer flex items-center justify-center text-white text-xs"
+              data-color="black"
               ><i class="fas fa-check"></i
             ></span>
             <span
-              class="w-6 h-6 rounded-full bg-white border border-gray-300 hover:border-black cursor-pointer"
+              class="color-swatch w-6 h-6 rounded-full bg-white border border-gray-300 hover:border-black cursor-pointer"
+              data-color="white"
+            ></span>
+            <span
+              class="color-swatch w-6 h-6 rounded-full"
+              style="background-color: #808080"
+              data-color="grey"
+            ></span>
+            <span
+              class="color-swatch w-6 h-6 rounded-full"
+              style="background-color: #8b4513"
+              data-color="brown"
             ></span>
           </div>
         </div>
@@ -282,32 +310,40 @@
           <div class="flex justify-between items-center mb-4 cursor-pointer">
             <h3 class="font-semibold text-base">Size</h3>
           </div>
-          <div class="grid grid-cols-3 gap-2 text-sm">
+          <div id="sizeOptions" class="grid grid-cols-3 gap-2 text-sm">
             <button
-              class="border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              class="size-option border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              data-size="xs"
             >
               XS
             </button>
             <button
-              class="border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              class="size-option border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              data-size="s"
             >
               S
             </button>
             <button
-              class="border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              class="size-option border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              data-size="m"
             >
               M
             </button>
-            <button class="border px-3 py-2 rounded-lg bg-black text-white">
+            <button
+              class="size-option border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              data-size="l"
+            >
               L
             </button>
             <button
-              class="border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              class="size-option border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              data-size="xl"
             >
               XL
             </button>
             <button
-              class="border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              class="size-option border px-3 py-2 rounded-lg hover:border-black hover:text-black"
+              data-size="xxl"
             >
               XXL
             </button>
@@ -319,7 +355,7 @@
           <div class="flex justify-between items-center mb-2 cursor-pointer">
             <h3 class="font-semibold text-base">Dress Style</h3>
           </div>
-          <ul class="text-sm space-y-3 text-gray-700">
+          <ul id="styleFilters" class="text-sm space-y-3 text-gray-700">
             <li class="flex items-center space-x-2 cursor-pointer">
               <input type="checkbox" class="w-4 h-4" />
               <span>Casual</span>
@@ -341,6 +377,7 @@
 
         <!-- Apply Button -->
         <button
+          id="applyFiltersBtn"
           class="w-full bg-black text-white py-3 rounded-lg mt-6 text-sm hover:bg-gray-800 transition-colors"
         >
           Apply Filter
@@ -354,18 +391,29 @@
           <div class="text-sm text-gray-500">
             Showing 1-10 of 100 products · Sort by
             <select
+              id="sortSelect"
               class="ml-1 border rounded px-2 py-1 bg-white font-medium text-black"
             >
-              <option>Most Popular</option>
-              <option>Lowest Price</option>
-              <option>Highest Rating</option>
+              <option value="popular">Most Popular</option>
+              <option value="price-asc">Lowest Price</option>
+              <option value="price-desc">Highest Price</option>
             </select>
           </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div
+          id="productGrid"
+          class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        >
           <!-- 1 -->
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="t-shirts"
+            data-colors="white,black"
+            data-sizes="s,m,l,xl"
+            data-style="casual"
+            data-price="145"
+          >
             <img
               src="images/2Frame 33.png"
               alt="Gradient Graphic T-shirt"
@@ -403,7 +451,14 @@
             </div>
           </div>
 
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="t-shirts"
+            data-colors="blue,white"
+            data-sizes="m,l,xl"
+            data-style="casual"
+            data-price="120"
+          >
             <img
               src="images/2Frame 34 (2).png"
               alt="Polo T-Shirt"
@@ -441,7 +496,14 @@
             </div>
           </div>
 
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="jeans"
+            data-colors="dark blue,black"
+            data-sizes="m,l,xl,xxl"
+            data-style="casual"
+            data-price="190"
+          >
             <img
               src="images/2Frame 38.png"
               alt="Denim Jeans"
@@ -480,7 +542,14 @@
           </div>
 
           <!-- 2 -->
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="jeans"
+            data-colors="light blue,blue"
+            data-sizes="s,m,l"
+            data-style="casual"
+            data-price="145"
+          >
             <img
               src="images/image 8.png"
               alt="Gradient Graphic T-shirt"
@@ -518,7 +587,14 @@
             </div>
           </div>
 
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="shirts"
+            data-colors="red,white"
+            data-sizes="s,m,l"
+            data-style="casual,party"
+            data-price="120"
+          >
             <img
               src="images/Frame 34.png"
               alt="Polo T-Shirt"
@@ -556,7 +632,14 @@
             </div>
           </div>
 
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="t-shirts"
+            data-colors="black,white"
+            data-sizes="m,l,xl"
+            data-style="casual,gym"
+            data-price="190"
+          >
             <img
               src="images/image 10.png"
               alt="Denim Jeans"
@@ -595,7 +678,14 @@
           </div>
 
           <!-- 3 -->
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="shirts"
+            data-colors="green,white"
+            data-sizes="l,xl"
+            data-style="casual,formal"
+            data-price="145"
+          >
             <img
               src="images/Frame 32.png"
               alt="Gradient Graphic T-shirt"
@@ -633,7 +723,14 @@
             </div>
           </div>
 
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="t-shirts"
+            data-colors="grey,black"
+            data-sizes="s,m,l"
+            data-style="casual"
+            data-price="120"
+          >
             <img
               src="images/Frame 33.png"
               alt="Polo T-Shirt"
@@ -671,7 +768,14 @@
             </div>
           </div>
 
-          <div class="bg-white border rounded-xl p-3 flex flex-col items-start">
+          <div
+            class="product bg-white border rounded-xl p-3 flex flex-col items-start"
+            data-category="shorts"
+            data-colors="beige,brown"
+            data-sizes="m,l"
+            data-style="casual,gym"
+            data-price="190"
+          >
             <img
               src="images/Frame 34 (2).png"
               alt="Denim Jeans"
@@ -1065,15 +1169,49 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const priceRangeSlider = document.getElementById("price-range-slider");
-        const currentPriceDisplay = document.getElementById(
-          "current-price-display"
-        );
-        const updatePriceDisplay = () => {
-          currentPriceDisplay.textContent = `$${priceRangeSlider.value}`;
-        };
-        updatePriceDisplay();
-        priceRangeSlider.addEventListener("input", updatePriceDisplay);
+        const minSlider = document.getElementById("price-min-slider");
+        const maxSlider = document.getElementById("price-max-slider");
+        const minDisplay = document.getElementById("current-min-display");
+        const maxDisplay = document.getElementById("current-max-display");
+
+        function syncPriceDisplays() {
+          if (!minSlider || !maxSlider) return;
+          const minVal = Math.min(
+            parseInt(minSlider.value),
+            parseInt(maxSlider.value)
+          );
+          const maxVal = Math.max(
+            parseInt(minSlider.value),
+            parseInt(maxSlider.value)
+          );
+          minSlider.value = String(minVal);
+          maxSlider.value = String(maxVal);
+          if (minDisplay) minDisplay.textContent = `$${minVal}`;
+          if (maxDisplay) maxDisplay.textContent = `$${maxVal}`;
+        }
+
+        // Initialize
+        if (minSlider && minSlider.min) {
+          minSlider.value = minSlider.min;
+        }
+        if (maxSlider && maxSlider.max) {
+          maxSlider.value = maxSlider.max;
+        }
+        syncPriceDisplays();
+
+        // Keep handles from crossing
+        minSlider.addEventListener("input", () => {
+          if (parseInt(minSlider.value) > parseInt(maxSlider.value)) {
+            maxSlider.value = minSlider.value;
+          }
+          syncPriceDisplays();
+        });
+        maxSlider.addEventListener("input", () => {
+          if (parseInt(maxSlider.value) < parseInt(minSlider.value)) {
+            minSlider.value = maxSlider.value;
+          }
+          syncPriceDisplays();
+        });
       });
     </script>
 
@@ -1258,6 +1396,167 @@
           // Initialize the stars for this product
           updateStars(currentRating);
         });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const products = document.querySelectorAll("#productGrid .product");
+        const minPriceSlider = document.getElementById("price-min-slider");
+        const maxPriceSlider = document.getElementById("price-max-slider");
+        const categoryList = document.getElementById("categoryFilters");
+        const styleList = document.getElementById("styleFilters");
+        const colorSwatches = document.querySelectorAll(".color-swatch");
+        const sizeButtons = document.querySelectorAll(".size-option");
+        const applyBtn = document.getElementById("applyFiltersBtn");
+        const sortSelect = document.getElementById("sortSelect");
+
+        const selectedColors = new Set();
+        const selectedSizes = new Set();
+
+        function getCheckedTexts(container) {
+          if (!container) return [];
+          const inputs = container.querySelectorAll('input[type="checkbox"]');
+          return Array.from(inputs)
+            .filter((c) => c.checked)
+            .map((c) => c.nextElementSibling.textContent.trim().toLowerCase());
+        }
+
+        function intersects(listA, csvB) {
+          if (listA.length === 0) return true;
+          const setB = new Set(
+            csvB
+              .split(",")
+              .map((v) => v.trim().toLowerCase())
+              .filter(Boolean)
+          );
+          return listA.some((v) => setB.has(v));
+        }
+
+        function filterProducts() {
+          const selectedCategories = getCheckedTexts(categoryList).map((v) =>
+            v.replace("t-shirts", "t-shirts").replace("hoodies", "hoodies")
+          );
+          const selectedStyles = getCheckedTexts(styleList);
+          const colors = Array.from(selectedColors);
+          const sizes = Array.from(selectedSizes);
+          const minPrice = parseFloat(
+            minPriceSlider ? minPriceSlider.value : "0"
+          );
+          const maxPrice = parseFloat(
+            maxPriceSlider ? maxPriceSlider.value : "999999"
+          );
+
+          products.forEach((product) => {
+            const productCategory = (
+              product.dataset.category || ""
+            ).toLowerCase();
+            const productStyles = product.dataset.style || "";
+            const productColors = product.dataset.colors || "";
+            const productSizes = product.dataset.sizes || "";
+            const productPrice = parseFloat(product.dataset.price || "0");
+
+            const categoryOk =
+              selectedCategories.length === 0 ||
+              selectedCategories.includes(productCategory);
+            const styleOk = intersects(selectedStyles, productStyles);
+            const colorOk = intersects(colors, productColors);
+            const sizeOk = intersects(sizes, productSizes);
+            const priceOk =
+              (isNaN(minPrice) || productPrice >= minPrice) &&
+              (isNaN(maxPrice) || productPrice <= maxPrice);
+
+            if (categoryOk && styleOk && colorOk && sizeOk && priceOk) {
+              product.style.display = "flex";
+            } else {
+              product.style.display = "none";
+            }
+          });
+        }
+
+        colorSwatches.forEach((swatch) => {
+          swatch.addEventListener("click", () => {
+            const color = (swatch.dataset.color || "").toLowerCase();
+            if (selectedColors.has(color)) {
+              selectedColors.delete(color);
+              swatch.classList.remove("ring-2", "ring-black");
+            } else {
+              selectedColors.add(color);
+              swatch.classList.add("ring-2", "ring-black");
+            }
+            filterProducts();
+          });
+        });
+
+        sizeButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const size = (btn.dataset.size || "").toLowerCase();
+            if (selectedSizes.has(size)) {
+              selectedSizes.delete(size);
+              btn.classList.remove("bg-black", "text-white", "border-black");
+            } else {
+              selectedSizes.add(size);
+              btn.classList.add("bg-black", "text-white", "border-black");
+            }
+            filterProducts();
+          });
+        });
+
+        if (categoryList) {
+          categoryList.addEventListener("change", filterProducts);
+        }
+        if (styleList) {
+          styleList.addEventListener("change", filterProducts);
+        }
+        if (minPriceSlider)
+          minPriceSlider.addEventListener("input", filterProducts);
+        if (maxPriceSlider)
+          maxPriceSlider.addEventListener("input", filterProducts);
+
+        if (sortSelect) {
+          sortSelect.addEventListener("change", () => {
+            const value = sortSelect.value;
+            const grid = document.getElementById("productGrid");
+            if (!grid) return;
+            const cards = Array.from(grid.querySelectorAll(".product"));
+
+            if (value === "price-asc") {
+              cards.sort(
+                (a, b) =>
+                  parseFloat(a.dataset.price || "0") -
+                  parseFloat(b.dataset.price || "0")
+              );
+            } else if (value === "price-desc") {
+              cards.sort(
+                (a, b) =>
+                  parseFloat(b.dataset.price || "0") -
+                  parseFloat(a.dataset.price || "0")
+              );
+            } else {
+              // popular: revert to original DOM order by using data-id as a proxy
+              cards.sort(
+                (a, b) =>
+                  parseInt(
+                    a.querySelector(".add-to-cart-btn")?.dataset.id || "0"
+                  ) -
+                  parseInt(
+                    b.querySelector(".add-to-cart-btn")?.dataset.id || "0"
+                  )
+              );
+            }
+
+            // Re-append in new order (visibility unchanged)
+            cards.forEach((card) => grid.appendChild(card));
+          });
+        }
+        if (applyBtn) {
+          applyBtn.addEventListener("click", () => {
+            filterProducts();
+            toggleFilters();
+          });
+        }
+
+        filterProducts();
       });
     </script>
   </body>
